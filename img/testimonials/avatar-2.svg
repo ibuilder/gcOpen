@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="50" fill="#17a2b8"/>
+  
+  <!-- Head with hard hat -->
+  <ellipse cx="50" cy="42" rx="20" ry="22" fill="#f8d7da"/>
+  <path d="M30 42 Q50 55 70 42" fill="#dc3545" stroke="#c82333" stroke-width="1"/>
+  <path d="M30 42 Q50 35 70 42" fill="#dc3545" stroke="#c82333" stroke-width="1"/>
+  
+  <!-- Face -->
+  <circle cx="43" cy="42" r="2" fill="#343a40"/>
+  <circle cx="57" cy="42" r="2" fill="#343a40"/>
+  
+  <!-- Glasses -->
+  <path d="M40 40 L38 40 Q35 40 35 42 Q35 44 38 44 L42 44 Q45 44 45 42 Q45 40 42 40 L40 40" fill="none" stroke="#343a40" stroke-width="1"/>
+  <path d="M58 40 L60 40 Q63 40 63 42 Q63 44 60 44 L56 44 Q53 44 53 42 Q53 40 56 40 L58 40" fill="none" stroke="#343a40" stroke-width="1"/>
+  <line x1="45" y1="42" x2="53" y2="42" stroke="#343a40" stroke-width="1"/>
+  
+  <!-- Beard -->
+  <path d="M42 48 Q50 55 58 48" fill="#6c757d"/>
+  
+  <!-- T-shirt collar -->
+  <path d="M40 65 L45 58 L55 58 L60 65" fill="#28a745"/>
+  
+  <!-- Measuring tape on belt -->
+  <rect x="45" y="70" width="10" height="5" rx="2" fill="#ffc107"/>
+  <circle cx="50" cy="72.5" r="2" fill="#e0a800"/>
+</svg>

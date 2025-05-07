@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <!-- Blueprint background pattern -->
+  <defs>
+    <pattern id="grid-pattern" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1E5188" stroke-width="0.5" opacity="0.5"/>
+    </pattern>
+    
+    <pattern id="small-grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#1E5188" stroke-width="0.2" opacity="0.3"/>
+    </pattern>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Main blueprint background -->
+  <rect width="100%" height="100%" fill="#0b3d78"/>
+  <rect width="100%" height="100%" fill="url(#small-grid)"/>
+  <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+  
+  <!-- Commercial Building elements -->
+  <!-- Main structure -->
+  <rect x="150" y="150" width="700" height="300" fill="none" stroke="#64B5F6" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Ground floor -->
+  <line x1="150" y1="370" x2="850" y2="370" stroke="#64B5F6" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- Multiple floors -->
+  <line x1="150" y1="260" x2="850" y2="260" stroke="#64B5F6" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- Glass facade -->
+  <!-- Left section -->
+  <rect x="150" y="150" width="250" height="300" fill="none" stroke="#90CAF9" stroke-width="1"/>
+  
+  <!-- Center section -->
+  <rect x="400" y="150" width="200" height="300" fill="none" stroke="#90CAF9" stroke-width="1"/>
+  
+  <!-- Right section -->
+  <rect x="600" y="150" width="250" height="300" fill="none" stroke="#90CAF9" stroke-width="1"/>
+  
+  <!-- Window patterns - vertical mullions -->
+  <!-- Left section -->
+  <line x1="190" y1="150" x2="190" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="230" y1="150" x2="230" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="270" y1="150" x2="270" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="310" y1="150" x2="310" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="350" y1="150" x2="350" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  
+  <!-- Center section -->
+  <line x1="440" y1="150" x2="440" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="480" y1="150" x2="480" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="520" y1="150" x2="520" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="560" y1="150" x2="560" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  
+  <!-- Right section -->
+  <line x1="640" y1="150" x2="640" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="680" y1="150" x2="680" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="720" y1="150" x2="720" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="760" y1="150" x2="760" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="800" y1="150" x2="800" y2="450" stroke="#90CAF9" stroke-width="0.5"/>
+  
+  <!-- Window patterns - horizontal mullions -->
+  <line x1="150" y1="190" x2="850" y2="190" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="150" y1="230" x2="850" y2="230" stroke="#90CAF9" stroke-width="0.5"/>
+  
+  <line x1="150" y1="290" x2="850" y2="290" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="150" y1="330" x2="850" y2="330" stroke="#90CAF9" stroke-width="0.5"/>
+  
+  <line x1="150" y1="390" x2="850" y2="390" stroke="#90CAF9" stroke-width="0.5"/>
+  <line x1="150" y1="430" x2="850" y2="430" stroke="#90CAF9" stroke-width="0.5"/>
+  
+  <!-- Main entrance -->
+  <rect x="470" y="370" width="60" height="80" fill="none" stroke="#64B5F6" stroke-width="2"/>
+  <path d="M 470 450 C 470 430, 530 430, 530 450" fill="none" stroke="#64B5F6" stroke-width="1"/>
+  
+  <!-- Stairs/Steps -->
+  <line x1="460" y1="450" x2="540" y2="450" stroke="#64B5F6" stroke-width="1"/>
+  <line x1="455" y1="455" x2="545" y2="455" stroke="#64B5F6" stroke-width="1"/>
+  <line x1="450" y1="460" x2="550" y2="460" stroke="#64B5F6" stroke-width="1"/>
+  
+  <!-- Rooftop structures -->
+  <rect x="400" y="130" width="200" height="20" fill="none" stroke="#64B5F6" stroke-width="1"/>
+  <rect x="450" y="110" width="100" height="20" fill="none" stroke="#64B5F6" stroke-width="1"/>
+  
+  <!-- HVAC units on roof -->
+  <rect x="200" y="120" width="40" height="30" fill="none" stroke="#64B5F6" stroke-width="1"/>
+  <rect x="760" y="120" width="40" height="30" fill="none" stroke="#64B5F6" stroke-width="1"/>
+  <circle cx="220" cy="135" r="10" fill="none" stroke="#64B5F6" stroke-width="0.7"/>
+  <circle cx="780" cy="135" r="10" fill="none" stroke="#64B5F6" stroke-width="0.7"/>
+  
+  <!-- Dimension lines -->
+  <line x1="150" y1="480" x2="850" y2="480" stroke="#FFCC80" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="150" y1="475" x2="150" y2="485" stroke="#FFCC80" stroke-width="1"/>
+  <line x1="850" y1="475" x2="850" y2="485" stroke="#FFCC80" stroke-width="1"/>
+  <text x="500" y="495" font-family="monospace" font-size="12" fill="#FFCC80" text-anchor="middle">700'</text>
+  
+  <line x1="130" y1="150" x2="130" y2="450" stroke="#FFCC80" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="125" y1="150" x2="135" y2="150" stroke="#FFCC80" stroke-width="1"/>
+  <line x1="125" y1="450" x2="135" y2="450" stroke="#FFCC80" stroke-width="1"/>
+  <text x="110" y="300" font-family="monospace" font-size="12" fill="#FFCC80" text-anchor="middle" transform="rotate(-90,110,300)">300'</text>
+  
+  <!-- Parking notation -->
+  <rect x="200" y="500" width="200" height="80" fill="none" stroke="#FFCC80" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="300" y="540" font-family="monospace" font-size="10" fill="#FFCC80" text-anchor="middle">PARKING AREA</text>
+  <text x="300" y="555" font-family="monospace" font-size="8" fill="#FFCC80" text-anchor="middle">(SEE DRAWING C-102)</text>
+  
+  <!-- Green space notation -->
+  <rect x="600" y="500" width="200" height="80" fill="none" stroke="#AEDE94" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="700" y="540" font-family="monospace" font-size="10" fill="#AEDE94" text-anchor="middle">LANDSCAPED AREA</text>
+  <text x="700" y="555" font-family="monospace" font-size="8" fill="#AEDE94" text-anchor="middle">(SEE DRAWING L-101)</text>
+  
+  <!-- Compass -->
+  <circle cx="80" cy="80" r="30" fill="none" stroke="#FFCC80" stroke-width="1"/>
+  <path d="M 80 50 L 80 110" stroke="#FFCC80" stroke-width="1"/>
+  <path d="M 50 80 L 110 80" stroke="#FFCC80" stroke-width="1"/>
+  <text x="80" y="65" font-family="monospace" font-size="12" fill="#FFCC80" text-anchor="middle">N</text>
+  <text x="95" y="82" font-family="monospace" font-size="12" fill="#FFCC80" text-anchor="middle">E</text>
+  <text x="80" y="102" font-family="monospace" font-size="12" fill="#FFCC80" text-anchor="middle">S</text>
+  <text x="65" y="82" font-family="monospace" font-size="12" fill="#FFCC80" text-anchor="middle">W</text>
+  
+  <!-- Technical notes -->
+  <text x="600" y="350" font-family="monospace" font-size="8" fill="#BBDEFB" opacity="0.8">NOTES:</text>
+  <text x="600" y="365" font-family="monospace" font-size="6" fill="#BBDEFB" opacity="0.8">1. ALL DIMENSIONS IN FEET</text>
+  <text x="600" y="375" font-family="monospace" font-size="6" fill="#BBDEFB" opacity="0.8">2. CURTAIN WALL SYSTEM: UNITIZED ALUMINUM FRAME WITH</text>
+  <text x="600" y="385" font-family="monospace" font-size="6" fill="#BBDEFB" opacity="0.8">   LOW-E DOUBLE GLAZING (SEE SPECIFICATION 08 44 13)</text>
+  <text x="600" y="395" font-family="monospace" font-size="6" fill="#BBDEFB" opacity="0.8">3. STRUCTURAL SYSTEM: STEEL FRAME WITH CONCRETE CORES</text>
+  
+  <!-- Title block -->
+  <rect x="800" y="500" width="150" height="80" fill="none" stroke="#64B5F6" stroke-width="1"/>
+  <line x1="800" y1="520" x2="950" y2="520" stroke="#64B5F6" stroke-width="1"/>
+  <text x="825" y="515" font-family="monospace" font-size="10" fill="#E3F2FD" text-anchor="left">COMMERCIAL PROJECT</text>
+  <text x="805" y="535" font-family="monospace" font-size="7" fill="#E3F2FD" text-anchor="left">SCALE: 1:200</text>
+  <text x="805" y="545" font-family="monospace" font-size="7" fill="#E3F2FD" text-anchor="left">DATE: 05/07/2025</text>
+  <text x="805" y="555" font-family="monospace" font-size="7" fill="#E3F2FD" text-anchor="left">DWG NO: A-101</text>
+  <text x="805" y="565" font-family="monospace" font-size="7" fill="#E3F2FD" text-anchor="left">DRAWN BY: GCOPEN</text>
+  <text x="805" y="575" font-family="monospace" font-size="7" fill="#E3F2FD" text-anchor="left">SHEET: ELEVATION</text>
+</svg>

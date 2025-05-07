@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gcOpen - FAQ</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #17a2b8;
+            --accent-color: #ffc107;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 56px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 50px 0;
+            margin-bottom: 40px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #e9ecef;
+            color: var(--primary-color);
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 60px;
+        }
+        
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">gcOpen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#pricing">Get Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <h1 class="display-5">Frequently Asked Questions</h1>
+        <p class="lead">Learn how to install and deploy your gcOpen applications</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- How to Install a Laravel Repository -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>How to Install a Laravel Repository</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div>
+                                <h5>Clone the Repository</h5>
+                                <p>First, clone the desired gcOpen repository from GitHub:</p>
+                                <div class="code-block">
+                                    git clone https://github.com/gcopen/gcBid.git<br>
+                                    cd gcBid
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div>
+                                <h5>Install Dependencies</h5>
+                                <p>Install PHP and Node.js dependencies:</p>
+                                <div class="code-block">
+                                    composer install<br>
+                                    npm install<br>
+                                    npm run build
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div>
+                                <h5>Configure Environment</h5>
+                                <p>Copy the environment file and configure it:</p>
+                                <div class="code-block">
+                                    cp .env.example .env<br>
+                                    php artisan key:generate
+                                </div>
+                                <p>Edit the .env file with your database credentials and settings.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div>
+                                <h5>Database Setup</h5>
+                                <p>Run migrations to set up the database:</p>
+                                <div class="code-block">
+                                    php artisan migrate<br>
+                                    php artisan db:seed (optional)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-number">5</div>
+                            <div>
+                                <h5>Start the Application</h5>
+                                <p>Run the Laravel development server:</p>
+                                <div class="code-block">
+                                    php artisan serve
+                                </div>
+                                <p>Access your application at http://localhost:8000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hosting Options -->
+                <div class="accordion mb-5" id="hostingAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#firebase">
+                                <h5><i class="fas fa-fire me-2"></i> Firebase Hosting</h5>
+                            </button>
+                        </h2>
+                        <div id="firebase" class="accordion-collapse collapse show" data-bs-parent="#hostingAccordion">
+                            <div class="accordion-body">
+                                <h6>Steps to deploy on Firebase Hosting:</h6>
+                                <ol>
+                                    <li>Install Firebase CLI: <code>npm install -g firebase-tools</code></li>
+                                    <li>Login to Firebase: <code>firebase login</code></li>
+                                    <li>Initialize Firebase in your project: <code>firebase init</code></li>
+                                    <li>Configure Firebase for PHP hosting (using Firebase Functions)</li>
+                                    <li>Deploy your application: <code>firebase deploy</code></li>
+                                </ol>
+                                <div class="alert alert-info">
+                                    <strong>Note:</strong> Firebase Hosting doesn't natively support PHP. You'll need to use Firebase Functions or set up a reverse proxy to serve your Laravel application.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#laravel-forge">
+                                <h5><i class="fas fa-server me-2"></i> Laravel Forge</h5>
+                            </button>
+                        </h2>
+                        <div id="laravel-forge" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+                            <div class="accordion-body">
+                                <h6>Deploy using Laravel Forge:</h6>
+                                <ol>
+                                    <li>Sign up for Laravel Forge account</li>
+                                    <li>Connect your server provider (DigitalOcean, AWS, etc.)</li>
+                                    <li>Create a new server and site</li>
+                                    <li>Connect your GitHub repository</li>
+                                    <li>Configure environment variables in Forge</li>
+                                    <li>Deploy with a single click</li>
+                                </ol>
+                                <div class="alert alert-success">
+                                    <strong>Benefit:</strong> Laravel Forge provides automated deployments, SSL certificates, and server management.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#digitalocean">
+                                <h5><i class="fas fa-water me-2"></i> DigitalOcean</h5>
+                            </button>
+                        </h2>
+                        <div id="digitalocean" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+                            <div class="accordion-body">
+                                <h6>Manual deployment on DigitalOcean:</h6>
+                                <ol>
+                                    <li>Create a Droplet with Ubuntu/Debian</li>
+                                    <li>Install LEMP stack (Nginx, MySQL, PHP)</li>
+                                    <li>Configure Nginx for Laravel</li>
+                                    <li>Clone your repository to the server</li>
+                                    <li>Set up environment variables</li>
+                                    <li>Run migrations and optimize</li>
+                                    <li>Configure supervisor for queues (if needed)</li>
+                                </ol>
+                                <div class="alert alert-warning">
+                                    <strong>Security:</strong> Ensure you secure your server with firewalls and regular updates.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#laravel-cloud">
+                                <h5><i class="fas fa-cloud me-2"></i> Laravel Cloud</h5>
+                            </button>
+                        </h2>
+                        <div id="laravel-cloud" class="accordion-collapse collapse" data-bs-parent="#hostingAccordion">
+                            <div class="accordion-body">
+                                <h6>Using Laravel Cloud:</h6>
+                                <ol>
+                                    <li>Create an account on Laravel Cloud</li>
+                                    <li>Connect your GitHub repository</li>
+                                    <li>Select your deployment region</li>
+                                    <li>Configure environment variables</li>
+                                    <li>Choose database and cache settings</li>
+                                    <li>Deploy automatically</li>
+                                </ol>
+                                <div class="alert alert-primary">
+                                    <strong>Advantages:</strong> Laravel Cloud offers seamless integration with Laravel applications and automatic scaling.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Issues -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Common Issues and Solutions</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Permission Issues</h5>
+                        <p>If you encounter permission errors:</p>
+                        <div class="code-block">
+                            sudo chown -R www-data:www-data storage bootstrap/cache<br>
+                            sudo chmod -R 775 storage bootstrap/cache
+                        </div>
+
+                        <h5>Composer Install Fails</h5>
+                        <p>If composer install fails, try:</p>
+                        <div class="code-block">
+                            composer install --no-scripts<br>
+                            composer run-script post-autoload-dump
+                        </div>
+
+                        <h5>Database Connection Issues</h5>
+                        <p>Check your .env file for correct database credentials and ensure your database server is running.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">gcOpen</h5>
+                    <p>
+                        Open source tools for the modern construction industry. Empowering general contractors with technology.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#" class="text-white">About Us</a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="text-white">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white">Documentation</a>
+                        </li>
+                        <li>
+                            <a href="index.html#contact" class="text-white">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Social</h5>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2025 gcOpen.org - All rights reserved
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

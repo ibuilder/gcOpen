@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gcOpen - Open Source Construction Tools</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.svg" alt="gcOpen Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">gcOpen - Open Source Construction Tools</h1>
+            <p class="lead">Empowering general contractors with free, open-source Laravel applications for the modern construction industry</p>
+            <hr class="my-4">
+            <p>Manage your construction business more efficiently with our suite of tools</p>
+            <a class="btn btn-light btn-lg" href="#products" role="button">Explore Our Products</a>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Products</h2>
+            <div class="row">
+                <!-- gcBid Card -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="position-relative">
+                            <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">Coming Soon</span>
+                            <img src="img/product-thumbnails/gcbid-thumbnail.svg" class="card-img-top p-2" alt="gcBid Thumbnail">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="product-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <h4 class="card-title">gcBid</h4>
+                            <p class="card-text">Streamline your bidding process with automated estimations and proposal generation.</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary mb-2 w-100 demo-btn">Live Demo</a>
+                                <a href="https://github.com/gcopen/gcBid" target="_blank" class="btn btn-outline-dark w-100">
+                                    <i class="fab fa-github me-2"></i>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- gcDeliver Card -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="img/product-thumbnails/gcdeliver-thumbnail.svg" class="card-img-top p-2" alt="gcDeliver Thumbnail">
+                        <div class="card-body text-center">
+                            <div class="product-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4 class="card-title">gcDeliver</h4>
+                            <p class="card-text">Manage deliveries, track materials, and coordinate with suppliers efficiently.</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary mb-2 w-100 demo-btn">Live Demo</a>
+                                <a href="https://github.com/gcopen/gcDeliver" target="_blank" class="btn btn-outline-dark w-100">
+                                    <i class="fab fa-github me-2"></i>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- gcBilling Card -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="img/product-thumbnails/gcbilling-thumbnail.svg" class="card-img-top p-2" alt="gcBilling Thumbnail">
+                        <div class="card-body text-center">
+                            <div class="product-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4 class="card-title">gcBilling</h4>
+                            <p class="card-text">Generate invoices, track payments, and manage financial records with ease.</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary mb-2 w-100 demo-btn">Live Demo</a>
+                                <a href="https://github.com/gcopen/gcBilling" target="_blank" class="btn btn-outline-dark w-100">
+                                    <i class="fab fa-github me-2"></i>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- gcDesign Card -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="position-relative">
+                            <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">Coming Soon</span>
+                            <img src="img/product-thumbnails/gcdesign-thumbnail.svg" class="card-img-top p-2" alt="gcDesign Thumbnail">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="product-icon">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <h4 class="card-title">gcDesign</h4>
+                            <p class="card-text">Plan, design, and visualize construction projects with integrated tools.</p>
+                            <div class="mt-auto">
+                                <a href="#" class="btn btn-primary mb-2 w-100 demo-btn">Live Demo</a>
+                                <a href="https://github.com/gcopen/gcDesign" target="_blank" class="btn btn-outline-dark w-100">
+                                    <i class="fab fa-github me-2"></i>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 testimonials-section">
+        <div class="container">
+            <h2 class="text-center mb-5">What Construction Professionals Say</h2>
+            
+            <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 testimonial-card">
+                        <div class="card-body text-center">
+                            <img src="img/testimonials/avatar-1.svg" alt="Construction Manager" class="testimonial-avatar">
+                            <h5 class="card-title">Sarah Johnson</h5>
+                            <p class="text-muted mb-3">Construction Manager, BuildRight Inc.</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text fst-italic">"gcBilling has transformed how we handle invoicing. We've reduced payment processing time by 70% and our clients love the professional-looking invoices."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 testimonial-card">
+                        <div class="card-body text-center">
+                            <img src="img/testimonials/avatar-2.svg" alt="Contractor" class="testimonial-avatar">
+                            <h5 class="card-title">Mike Rodriguez</h5>
+                            <p class="text-muted mb-3">General Contractor, Rodriguez Construction</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="card-text fst-italic">"gcDeliver has completely eliminated delivery mix-ups on our job sites. The real-time tracking and supplier coordination features are game-changers for managing complex projects."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-0 testimonial-card">
+                        <div class="card-body text-center">
+                            <img src="img/testimonials/avatar-3.svg" alt="Project Manager" class="testimonial-avatar">
+                            <h5 class="card-title">David Chen</h5>
+                            <p class="text-muted mb-3">Project Manager, Urban Development Group</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text fst-italic">"What impresses me most about gcOpen tools is how well they integrate with each other. From bidding to delivery to billing, everything works together in a seamless workflow."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Have Questions?</h2>
+                    <p class="lead mb-4">Check out our comprehensive FAQ page for information about installing and deploying our tools.</p>
+                    <a href="faq.html" class="btn btn-primary btn-lg px-5">
+                        <i class="fas fa-question-circle me-2"></i>Visit FAQ Page
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="text-center text-lg-start">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">gcOpen</h5>
+                    <p>
+                        Open source tools for the modern construction industry. Empowering general contractors with technology.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#" class="text-white">About Us</a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="text-white">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white">Documentation</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-white">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Social</h5>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © <span class="copyright-year">2025</span> gcOpen.org - All rights reserved
+        </div>
+    </footer>
+
+    <!-- Modal for quote success -->
+    <div class="modal fade" id="quote-success-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quote Request Submitted</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you for your request! We'll get back to you with a custom quote within 24 hours.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+</html>

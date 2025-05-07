@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Background -->
+  <rect width="300" height="200" rx="10" fill="#f8f9fa"/>
+  
+  <!-- Header bar -->
+  <rect width="300" height="40" rx="10" fill="#17a2b8"/>
+  <text x="20" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">gcDeliver</text>
+  
+  <!-- Map area -->
+  <rect x="20" y="55" width="170" height="130" rx="5" fill="#e9ecef" stroke="#dee2e6" stroke-width="1"/>
+  
+  <!-- Map roads -->
+  <path d="M30 120h150M95 65v110" stroke="#adb5bd" stroke-width="3"/>
+  <path d="M50 85v70M140 85v70M60 95h70M60 145h70" stroke="#adb5bd" stroke-width="1.5"/>
+  
+  <!-- Map building locations -->
+  <rect x="40" y="75" width="20" height="15" rx="2" fill="#6c757d"/>
+  <rect x="130" y="75" width="20" height="15" rx="2" fill="#6c757d"/>
+  <rect x="40" y="135" width="20" height="15" rx="2" fill="#6c757d"/>
+  <rect x="130" y="135" width="20" height="15" rx="2" fill="#6c757d"/>
+  
+  <!-- Delivery truck -->
+  <rect x="85" y="95" width="20" height="12" rx="3" fill="#0056b3"/>
+  <rect x="90" y="107" width="10" height="5" rx="1" fill="#0056b3"/>
+  <circle cx="90" cy="112" r="3" fill="#343a40"/>
+  <circle cx="100" cy="112" r="3" fill="#343a40"/>
+  
+  <!-- Delivery info panel -->
+  <rect x="200" y="55" width="80" height="130" rx="5" fill="white" stroke="#dee2e6" stroke-width="1"/>
+  
+  <!-- Delivery status items -->
+  <rect x="210" y="65" width="60" height="20" rx="3" fill="#e9ecef"/>
+  <text x="225" y="80" font-family="Arial, sans-serif" font-size="10" fill="#212529">Deliveries</text>
+  
+  <!-- Delivery items -->
+  <rect x="210" y="95" width="60" height="15" rx="2" fill="#d1ecf1"/>
+  <text x="215" y="106" font-family="Arial, sans-serif" font-size="8" fill="#0c5460">Lumber 8:30 AM</text>
+  
+  <rect x="210" y="115" width="60" height="15" rx="2" fill="#fff3cd"/>
+  <text x="215" y="126" font-family="Arial, sans-serif" font-size="8" fill="#856404">Steel 10:15 AM</text>
+  
+  <rect x="210" y="135" width="60" height="15" rx="2" fill="#d4edda"/>
+  <text x="215" y="146" font-family="Arial, sans-serif" font-size="8" fill="#155724">Drywall 2:00 PM</text>
+  
+  <rect x="210" y="155" width="60" height="15" rx="2" fill="#f8d7da"/>
+  <text x="215" y="166" font-family="Arial, sans-serif" font-size="8" fill="#721c24">Glass 4:30 PM</text>
+  
+  <!-- Route indicator -->
+  <path d="M50 85c0 0, 0 15, 40 30c40 15, 40 35, 40 50" stroke="#0056b3" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <circle cx="50" cy="85" r="5" fill="#0056b3"/>
+  <circle cx="130" cy="165" r="5" fill="#17a2b8"/>
+</svg>

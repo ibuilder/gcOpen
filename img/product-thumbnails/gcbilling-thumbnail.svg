@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Background -->
+  <rect width="300" height="200" rx="10" fill="#f8f9fa"/>
+  
+  <!-- Header bar -->
+  <rect width="300" height="40" rx="10" fill="#6f42c1"/>
+  <text x="20" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">gcBilling</text>
+  
+  <!-- Invoice area -->
+  <rect x="20" y="55" width="260" height="130" rx="5" fill="white" stroke="#dee2e6" stroke-width="1"/>
+  
+  <!-- Invoice header -->
+  <rect x="35" y="65" width="230" height="25" rx="2" fill="#e9ecef"/>
+  <text x="45" y="82" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">INVOICE #12345</text>
+  <text x="200" y="82" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">05/07/2025</text>
+  
+  <!-- Client info -->
+  <text x="35" y="105" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Client:</text>
+  <text x="75" y="105" font-family="Arial, sans-serif" font-size="10" fill="#212529">Metropolis Construction, LLC</text>
+  
+  <text x="35" y="120" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Project:</text>
+  <text x="75" y="120" font-family="Arial, sans-serif" font-size="10" fill="#212529">Downtown Office Tower</text>
+  
+  <!-- Invoice line items -->
+  <line x1="35" y1="130" x2="265" y2="130" stroke="#dee2e6" stroke-width="1"/>
+  
+  <text x="35" y="145" font-family="Arial, sans-serif" font-size="9" fill="#495057">Phase 1 Completion</text>
+  <text x="165" y="145" font-family="Arial, sans-serif" font-size="9" fill="#495057">$175,000.00</text>
+  <text x="235" y="145" font-family="Arial, sans-serif" font-size="9" fill="#28a745">PAID</text>
+  
+  <text x="35" y="160" font-family="Arial, sans-serif" font-size="9" fill="#495057">Phase 2 (50% complete)</text>
+  <text x="165" y="160" font-family="Arial, sans-serif" font-size="9" fill="#495057">$125,000.00</text>
+  <text x="235" y="160" font-family="Arial, sans-serif" font-size="9" fill="#dc3545">DUE</text>
+  
+  <line x1="35" y1="170" x2="265" y2="170" stroke="#dee2e6" stroke-width="1"/>
+  
+  <!-- Total -->
+  <text x="175" y="183" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#495057">TOTAL DUE:</text>
+  <text x="235" y="183" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#495057">$125,000.00</text>
+  
+  <!-- Calculator and dollar sign -->
+  <circle cx="255" cy="65" r="10" fill="#28a745"/>
+  <text x="252" y="69" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">$</text>
+</svg>

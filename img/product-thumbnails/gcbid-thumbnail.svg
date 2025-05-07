@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Background -->
+  <rect width="300" height="200" rx="10" fill="#f8f9fa"/>
+  
+  <!-- Header bar -->
+  <rect width="300" height="40" rx="10" fill="#0056b3"/>
+  <text x="20" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">gcBid</text>
+  
+  <!-- Document area -->
+  <rect x="20" y="55" width="260" height="130" rx="5" fill="white" stroke="#dee2e6" stroke-width="1"/>
+  
+  <!-- Bid document elements -->
+  <rect x="35" y="70" width="230" height="25" rx="3" fill="#e9ecef"/>
+  <text x="45" y="87" font-family="Arial, sans-serif" font-size="12" fill="#495057">Commercial Office Building</text>
+  
+  <!-- Form elements -->
+  <rect x="35" y="105" width="100" height="15" rx="2" fill="#e9ecef"/>
+  <text x="45" y="117" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Item Description</text>
+  
+  <rect x="145" y="105" width="50" height="15" rx="2" fill="#e9ecef"/>
+  <text x="155" y="117" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Quantity</text>
+  
+  <rect x="205" y="105" width="60" height="15" rx="2" fill="#e9ecef"/>
+  <text x="215" y="117" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Unit Price</text>
+  
+  <!-- Bid items -->
+  <rect x="35" y="130" width="100" height="15" fill="white" stroke="#dee2e6" stroke-width="0.5"/>
+  <text x="45" y="142" font-family="Arial, sans-serif" font-size="10" fill="#212529">Concrete Foundation</text>
+  
+  <rect x="145" y="130" width="50" height="15" fill="white" stroke="#dee2e6" stroke-width="0.5"/>
+  <text x="155" y="142" font-family="Arial, sans-serif" font-size="10" fill="#212529">450 yd³</text>
+  
+  <rect x="205" y="130" width="60" height="15" fill="white" stroke="#dee2e6" stroke-width="0.5"/>
+  <text x="215" y="142" font-family="Arial, sans-serif" font-size="10" fill="#212529">$125.00</text>
+  
+  <rect x="35" y="150" width="100" height="15" fill="white" stroke="#dee2e6" stroke-width="0.5"/>
+  <text x="45" y="162" font-family="Arial, sans-serif" font-size="10" fill="#212529">Steel Framing</text>
+  
+  <rect x="145" y="150" width="50" height="15" fill="white" stroke="#dee2e6" stroke-width="0.5"/>
+  <text x="155" y="162" font-family="Arial, sans-serif" font-size="10" fill="#212529">28 tons</text>
+  
+  <rect x="205" y="150" width="60" height="15" fill="white" stroke="#dee2e6" stroke-width="0.5"/>
+  <text x="215" y="162" font-family="Arial, sans-serif" font-size="10" fill="#212529">$1,850.00</text>
+  
+  <!-- Calculator icon -->
+  <circle cx="260" cy="170" r="15" fill="#ffc107"/>
+  <path d="M252 165h16M252 170h16M252 175h16M257 160v20" stroke="white" stroke-width="2"/>
+</svg>

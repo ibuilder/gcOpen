@@ -1,0 +1,165 @@
+/* Responsive styles for gcOpen.org */
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    .jumbotron {
+        padding: 50px 15px;
+    }
+    
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+    
+    .jumbotron .lead {
+        font-size: 1rem;
+    }
+    
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    .step-item {
+        flex-direction: column;
+    }
+    
+    .step-number {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    .product-icon {
+        font-size: 2.5rem;
+    }
+    
+    footer {
+        text-align: center;
+    }
+    
+    footer .col-lg-3 {
+        margin-top: 20px;
+    }
+}
+
+/* Small devices (landscape phones, 576px to 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .jumbotron {
+        padding: 80px 20px;
+    }
+    
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-padding {
+        padding: 60px 0;
+    }
+    
+    .step-item {
+        align-items: flex-start;
+    }
+    
+    footer .col-md-6 {
+        margin-bottom: 20px;
+    }
+}
+
+/* Medium devices (tablets, 768px to 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .jumbotron {
+        padding: 100px 25px;
+    }
+}
+
+/* Large devices (desktops, 992px to 1200px) */
+@media (min-width: 992px) {
+    .jumbotron {
+        padding: 120px 25px;
+    }
+    
+    .jumbotron h1 {
+        font-size: 3.5rem;
+    }
+    
+    .jumbotron .lead {
+        font-size: 1.5rem;
+    }
+}
+
+/* Fix for card heights in different screen sizes */
+@media (min-width: 768px) {
+    .row-equal > div[class*='col-'] {
+        display: flex;
+        flex: 1 0 auto;
+    }
+    
+    .row-equal .card {
+        width: 100%;
+    }
+}
+
+/* Navigation adjustments for mobile */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: var(--dark-color);
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    
+    .navbar-collapse .nav-link {
+        padding: 10px 0;
+    }
+}
+
+/* Hero section responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 30px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Form responsive adjustments */
+@media (max-width: 576px) {
+    .form-control {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* FAQ section adjustments */
+@media (max-width: 768px) {
+    .accordion-button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    
+    .code-block {
+        font-size: 0.8rem;
+        padding: 10px;
+        overflow-x: auto;
+    }
+}
+
+/* Footer responsive adjustments */
+@media (max-width: 768px) {
+    footer h5 {
+        margin-top: 20px;
+    }
+    
+    footer .btn-outline-light {
+        width: 35px;
+        height: 35px;
+        margin: 3px;
+    }
+}

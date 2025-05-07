@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="50" fill="#6f42c1"/>
+  
+  <!-- Hair -->
+  <path d="M30 40 Q50 20 70 40" fill="#6c757d"/>
+  
+  <!-- Face -->
+  <ellipse cx="50" cy="50" rx="20" ry="23" fill="#f8d7da"/>
+  
+  <!-- Eyes -->
+  <circle cx="43" cy="45" r="2" fill="#343a40"/>
+  <circle cx="57" cy="45" r="2" fill="#343a40"/>
+  
+  <!-- Smile -->
+  <path d="M42 55 Q50 60 58 55" fill="none" stroke="#343a40" stroke-width="1.5"/>
+  
+  <!-- Shirt collar -->
+  <path d="M40 68 L45 60 L55 60 L60 68" fill="#f8f9fa"/>
+  
+  <!-- Tie -->
+  <path d="M50 60 L47 68 L50 75 L53 68 Z" fill="#ffc107"/>
+  
+  <!-- Clipboard -->
+  <rect x="60" y="40" width="12" height="15" rx="1" fill="#f8f9fa" stroke="#343a40" stroke-width="0.8"/>
+  <rect x="62" y="43" width="8" height="2" rx="0.5" fill="#adb5bd"/>
+  <rect x="62" y="47" width="8" height="2" rx="0.5" fill="#adb5bd"/>
+  <rect x="62" y="51" width="8" height="2" rx="0.5" fill="#adb5bd"/>
+  <circle cx="66" cy="38" r="2" fill="#343a40"/>
+</svg>

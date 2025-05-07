@@ -1,0 +1,71 @@
+<svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="300" height="80" fill="white" opacity="0"/>
+  
+  <!-- Tower Crane - Yellow with dark blue cables - moved right -->
+  <g transform="translate(30, 0)">
+    <!-- Tower/Mast -->
+    <rect x="20" y="15" width="6" height="45" fill="#FFD700"/>
+    
+    <!-- Tower internal structure -->
+    <line x1="20" y1="20" x2="26" y2="20" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="25" x2="26" y2="25" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="30" x2="26" y2="30" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="35" x2="26" y2="35" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="40" x2="26" y2="40" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="45" x2="26" y2="45" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="50" x2="26" y2="50" stroke="#E5C100" stroke-width="0.5"/>
+    <line x1="20" y1="55" x2="26" y2="55" stroke="#E5C100" stroke-width="0.5"/>
+    
+    <!-- Base -->
+    <rect x="17" y="60" width="12" height="3" fill="#FFD700"/>
+    
+    <!-- Jib (front arm) - Extended over "gc" -->
+    <rect x="23" y="12" width="95" height="3" fill="#FFD700"/>
+    
+    <!-- Jib structural supports - dark blue (same as gc) -->
+    <line x1="23" y1="12" x2="23" y2="15" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="28" y1="12" x2="26" y2="20" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="33" y1="12" x2="26" y2="25" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="38" y1="12" x2="26" y2="30" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="43" y1="12" x2="26" y2="35" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="50" y1="12" x2="26" y2="40" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="60" y1="12" x2="26" y2="45" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="70" y1="12" x2="26" y2="50" stroke="#2C3E50" stroke-width="1"/>
+    
+    <!-- Counter Jib (back arm) -->
+    <rect x="3" y="12" width="20" height="3" fill="#FFD700"/>
+    
+    <!-- Counter Jib supports - dark blue (same as gc) -->
+    <line x1="23" y1="12" x2="20" y2="20" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="18" y1="12" x2="20" y2="20" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="13" y1="12" x2="20" y2="25" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="8" y1="12" x2="20" y2="30" stroke="#2C3E50" stroke-width="1"/>
+    <line x1="3" y1="12" x2="20" y2="35" stroke="#2C3E50" stroke-width="1"/>
+    
+    <!-- Counterweight -->
+    <rect x="3" y="10" width="5" height="6" fill="#E5C100"/>
+    
+    <!-- Trolley on jib - positioned between c and O -->
+    <rect x="75" y="10" width="4" height="5" fill="#E5C100"/>
+    
+    <!-- Hook and Cable - dark blue (same as gc), positioned between c and O -->
+    <line x1="77" y1="15" x2="77" y2="40" stroke="#2C3E50" stroke-width="0.75"/>
+    <path d="M75,42 C75,40 79,40 79,42 L78,44 C78,45 76,45 76,44 Z" fill="#E5C100"/>
+    
+    <!-- Operator Cab -->
+    <rect x="17" y="15" width="9" height="5" fill="#E5C100"/>
+  </g>
+  
+  <!-- Company name -->
+  <g transform="translate(70, 25)">
+    <!-- gc in dark blue letters -->
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#2C3E50">gc</text>
+    
+    <!-- Open in sky blue letters -->
+    <text x="43" y="20" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#4FC3F7">Open</text>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="70" y="60" font-family="Arial, sans-serif" font-size="12" fill="#7F8C8D">Open Source Construction</text>
+</svg>
