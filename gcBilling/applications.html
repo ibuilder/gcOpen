@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications for Payment - GCBilling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Container -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="content-header">
+            <div>
+                <h1 class="h4 mb-0">Applications for Payment</h1>
+                <p class="text-muted mb-0">Highrise Development</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn btn-outline-primary btn-icon">
+                    <i class="fas fa-download"></i> Export to Excel
+                </button>
+                <button class="btn btn-primary btn-icon" id="newApplicationBtn">
+                    <i class="fas fa-plus"></i> New Application
+                </button>
+            </div>
+        </header>
+        
+        <!-- Content Body -->
+        <div class="content-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-file-invoice me-2"></i>Applications for Payment</h5>
+                            <div class="badge bg-info">5 applications</div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Application #</th>
+                                            <th>Period</th>
+                                            <th>Date</th>
+                                            <th>Retainage</th>
+                                            <th>Status</th>
+                                            <th>Notes</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>App #1</td>
+                                            <td>Jan 31 - Feb 27, 2023</td>
+                                            <td>Mar 4, 2023</td>
+                                            <td>5%</td>
+                                            <td><span class="status-badge status-approved">Approved</span></td>
+                                            <td>—</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary" title="View">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>App #2</td>
+                                            <td>Feb 28 - Mar 30, 2023</td>
+                                            <td>Apr 4, 2023</td>
+                                            <td>5%</td>
+                                            <td><span class="status-badge status-approved">Approved</span></td>
+                                            <td>—</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary" title="View">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>App #3</td>
+                                            <td>Mar 31 - Apr 29, 2023</td>
+                                            <td>May 4, 2023</td>
+                                            <td>5%</td>
+                                            <td><span class="status-badge status-approved">Approved</span></td>
+                                            <td>—</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary" title="View">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>App #4</td>
+                                            <td>Apr 30 - May 30, 2023</td>
+                                            <td>Jun 4, 2023</td>
+                                            <td>5%</td>
+                                            <td><span class="status-badge status-approved">Approved</span></td>
+                                            <td>—</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary" title="View">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>App #5</td>
+                                            <td>May 31 - Jun 29, 2023</td>
+                                            <td>Jul 4, 2023</td>
+                                            <td>5%</td>
+                                            <td><span class="status-badge status-pending">Pending</span></td>
+                                            <td>—</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary" title="View">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- New Application Modal -->
+    <div class="modal fade" id="newApplicationModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Application</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form onsubmit="handleApplicationSubmit(event)">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Application Number</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Application Date</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Period Start</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Period End</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Retainage %</label>
+                            <input type="number" class="form-control" value="5" step="0.1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Component Loader -->
+    <script src="assets/js/component-loader.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeModals();
+        });
+    </script>
+</body>
+</html>

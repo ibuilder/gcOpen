@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - GCBilling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Container -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="content-header">
+            <div>
+                <h1 class="h4 mb-0">Reports</h1>
+                <p class="text-muted mb-0">Generate and export various reports</p>
+            </div>
+        </header>
+        
+        <!-- Content Body -->
+        <div class="content-body">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Project</h5>
+                            <select class="form-select form-select-sm w-auto">
+                                <option>Highrise Development</option>
+                            </select>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Report Type</label>
+                                        <select class="form-select" id="reportType">
+                                            <option>Applications Summary</option>
+                                            <option>Cash Flow Projection</option>
+                                            <option>Change Orders</option>
+                                            <option>Financial Summary</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" onclick="exportToPDF(document.getElementById('reportType').value)">
+                                <i class="fas fa-file-pdf me-2"></i> Generate Excel & PDF Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Report Cards Grid -->
+            <div class="row g-4">
+                <!-- Applications for Payment Summary -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-file-invoice me-2"></i>Applications for Payment Summary</h5>
+                                    <p class="text-muted">Summary of all applications for payment including status, dates, and amounts.</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <small class="text-muted">Total Applications: 5</small><br>
+                                <small class="text-muted">Approved: 4</small><br>
+                                <small class="text-muted">Pending: 1</small><br>
+                                <small class="text-muted">Latest Application: #5</small>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="exportToPDF('applications-summary')">
+                                <i class="fas fa-download me-2"></i> Generate Excel & PDF Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Applications Summary -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-file-alt me-2"></i>Applications Summary</h5>
+                                    <p class="text-muted">Summary of all applications for payment with status, dates, and amounts.</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="exportToPDF('applications-summary')">
+                                <i class="fas fa-download me-2"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Change Orders -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-exchange-alt me-2"></i>Change Orders</h5>
+                                    <p class="text-muted">Detailed report of all change orders with approval status and financial impact.</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="exportToPDF('change-orders')">
+                                <i class="fas fa-download me-2"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Financial Summary -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-dollar-sign me-2"></i>Financial Summary</h5>
+                                    <p class="text-muted">Overall financial status including contract sums, billings, and outstanding balances.</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="exportToPDF('financial-summary')">
+                                <i class="fas fa-download me-2"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Schedule -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-calendar-alt me-2"></i>Project Schedule</h5>
+                                    <p class="text-muted">Project timeline with phases, milestones, and progress tracking.</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="exportToPDF('project-schedule')">
+                                <i class="fas fa-download me-2"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cash Flow Projection -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-chart-line me-2"></i>Cash Flow Projection</h5>
+                                    <p class="text-muted">Monthly cash flow projections based on contract sum and project timeline.</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="exportToPDF('cash-flow')">
+                                <i class="fas fa-download me-2"></i> Generate Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Custom Report -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card report-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title"><i class="fas fa-magic me-2"></i>Custom Report</h5>
+                                    <p class="text-muted">Create custom reports with specific metrics and data points (Coming Soon).</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 disabled">
+                                <i class="fas fa-download me-2"></i> Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Component Loader -->
+    <script src="assets/js/component-loader.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

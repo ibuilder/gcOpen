@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon version for favicon/small displays -->
+  <rect width="40" height="40" rx="8" fill="#0d6efd"/>
+  
+  <!-- Building silhouette -->
+  <g fill="white">
+    <!-- Main Building -->
+    <rect x="8" y="12" width="24" height="24" rx="2"/>
+    
+    <!-- Windows - darker overlay to show as cutouts -->
+    <rect x="12" y="16" width="4" height="4" fill="#0d6efd"/>
+    <rect x="20" y="16" width="4" height="4" fill="#0d6efd"/>
+    <rect x="28" y="16" width="4" height="4" fill="#0d6efd"/>
+    
+    <rect x="12" y="24" width="4" height="4" fill="#0d6efd"/>
+    <rect x="20" y="24" width="4" height="4" fill="#0d6efd"/>
+    <rect x="28" y="24" width="4" height="4" fill="#0d6efd"/>
+    
+    <!-- Door -->
+    <rect x="18" y="30" width="8" height="6" fill="#0d6efd"/>
+    
+    <!-- Roof -->
+    <path d="M4 12 L20 4 L36 12 Z" fill="white"/>
+  </g>
+</svg>

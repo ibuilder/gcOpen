@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - gcDeliver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <h1 class="mb-4">Dashboard</h1>
+                <p class="text-muted mb-4">Welcome back, Admin User. Here's your project overview.</p>
+
+                <!-- Statistics Cards -->
+                <div class="row" id="dashboard-cards"></div>
+
+                <!-- Project Progress Section -->
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <div class="dashboard-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Project Progress</h5>
+                                <select class="form-select form-select-sm w-auto">
+                                    <option>Last 30 Days</option>
+                                    <option>Last 7 Days</option>
+                                    <option>Today</option>
+                                </select>
+                            </div>
+                            <div style="height: 300px; position: relative;">
+                                <canvas id="ganttChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h5>Project Status</h5>
+                            <div class="project-status-list">
+                                <div class="status-item mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Downtown Highrise</span>
+                                        <span class="text-primary">72%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar" style="width: 72%"></div>
+                                    </div>
+                                </div>
+                                <div class="status-item mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Westside Office Complex</span>
+                                        <span class="text-primary">46%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar" style="width: 46%"></div>
+                                    </div>
+                                </div>
+                                <div class="status-item mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Harbor View Apartments</span>
+                                        <span class="text-primary">28%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar" style="width: 28%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3">View All Projects</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity and Upcoming Deliveries -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="dashboard-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Recent Activity</h5>
+                                <a href="#" class="text-primary">View All</a>
+                            </div>
+                            <div class="activity-list" id="recent-activity">
+                                <!-- Activity items will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="dashboard-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Upcoming Deliveries</h5>
+                                <a href="#" class="text-primary">View All</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Project</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="upcoming-deliveries">
+                                        <!-- Delivery rows will be inserted here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manpower Distribution -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="dashboard-card">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Manpower Distribution</h5>
+                                <select class="form-select form-select-sm w-auto">
+                                    <option>Downtown Highrise</option>
+                                    <option>Westside Office Complex</option>
+                                    <option>Harbor View Apartments</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div style="height: 300px; position: relative;">
+                                        <canvas id="manpowerChart"></canvas>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6>Total Manpower</h6>
+                                    <h3>47 workers</h3>
+                                    <p class="text-muted">Last update: Today, 8:00 AM</p>
+                                    
+                                    <div class="worker-list mt-4" id="worker-distribution">
+                                        <!-- Worker distribution will be inserted here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Initialize page with data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Insert sidebar
+            document.getElementById('sidebar-container').innerHTML = createSidebar('dashboard');
+            
+            // Dashboard cards data
+            const dashboardData = [
+                {
+                    title: 'Active Projects',
+                    value: '12',
+                    trend: { direction: 'up', color: 'success', text: '3% from last month' },
+                    badge: { type: 'new', text: '2 New' }
+                },
+                {
+                    title: 'Deliveries Today',
+                    value: '8',
+                    trend: { direction: 'down', color: 'danger', text: '7% from yesterday' },
+                    badge: { type: 'urgent', text: 'Urgent' }
+                },
+                {
+                    title: 'Pending Items',
+                    value: '43',
+                    trend: { direction: 'up', color: 'success', text: '12% items processed' },
+                    badge: { type: 'delayed', text: '4 Delayed' }
+                },
+                {
+                    title: 'Active Partners',
+                    value: '27',
+                    trend: { direction: 'right', color: 'primary', text: 'no change' },
+                    badge: { type: 'good', text: 'All Good' }
+                }
+            ];
+            
+            // Render dashboard cards
+            const dashboardCards = document.getElementById('dashboard-cards');
+            dashboardData.forEach(data => {
+                dashboardCards.innerHTML += createDashboardCard(data);
+            });
+            
+            // Recent activity data
+            const activities = [
+                {
+                    icon: 'bi-truck',
+                    color: 'primary',
+                    title: 'Material delivery confirmed for Downtown Highrise',
+                    time: 'Today, 10:30 AM'
+                },
+                {
+                    icon: 'bi-check-circle',
+                    color: 'success',
+                    title: 'Foundation inspection passed at Westside Office Complex',
+                    time: 'Yesterday, 4:15 PM'
+                },
+                {
+                    icon: 'bi-exclamation-triangle',
+                    color: 'warning',
+                    title: 'Delay reported in electrical work at Harbor View Apartments',
+                    time: 'Jun 7, 9:25 AM'
+                },
+                {
+                    icon: 'bi-calendar-check',
+                    color: 'info',
+                    title: 'Project schedule updated for Downtown Highrise',
+                    time: 'Jun 5, 2:30 PM'
+                }
+            ];
+            
+            // Render recent activities
+            const activityList = document.getElementById('recent-activity');
+            activities.forEach(activity => {
+                activityList.innerHTML += `
+                    <div class="activity-item d-flex align-items-start mb-3">
+                        <div class="activity-icon bg-${activity.color}-subtle text-${activity.color} rounded-circle p-2 me-3">
+                            <i class="bi ${activity.icon}"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">${activity.title}</h6>
+                            <small class="text-muted">${activity.time}</small>
+                        </div>
+                    </div>`;
+            });
+            
+            // Upcoming deliveries data
+            const deliveries = [
+                { item: 'Steel Beams', project: 'Downtown Highrise', date: 'Jun 7, 8:00 AM', status: 'Confirmed', statusColor: 'success' },
+                { item: 'Concrete Mix', project: 'Harbor View Apartments', date: 'Jun 8, 10:30 AM', status: 'Pending', statusColor: 'warning' },
+                { item: 'HVAC Units', project: 'Westside Office Complex', date: 'Jun 9, 2:00 PM', status: 'Scheduled', statusColor: 'primary' },
+                { item: 'Electrical Panels', project: 'Downtown Highrise', date: 'Jun 10, 9:15 AM', status: 'Delayed', statusColor: 'danger' }
+            ];
+            
+            // Render deliveries
+            const deliveriesTable = document.getElementById('upcoming-deliveries');
+            deliveries.forEach(delivery => {
+                deliveriesTable.innerHTML += `
+                    <tr>
+                        <td>${delivery.item}</td>
+                        <td>${delivery.project}</td>
+                        <td>${delivery.date}</td>
+                        <td><span class="badge bg-${delivery.statusColor}">${delivery.status}</span></td>
+                    </tr>`;
+            });
+            
+            // Worker distribution data
+            const workers = [
+                { role: 'Carpenters', count: 12 },
+                { role: 'Electricians', count: 8 },
+                { role: 'Plumbers', count: 5 },
+                { role: 'HVAC Technicians', count: 7 },
+                { role: 'Laborers', count: 15 }
+            ];
+            
+            // Render worker distribution
+            const workerList = document.getElementById('worker-distribution');
+            workers.forEach(worker => {
+                workerList.innerHTML += `
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>${worker.role}</span>
+                        <span class="fw-bold">${worker.count} workers</span>
+                    </div>`;
+            });
+            
+            // Initialize charts
+            initializeCharts();
+        });
+    </script>
+</body>
+</html>

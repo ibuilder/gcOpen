@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliveries - gcDeliver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h1>Deliveries</h1>
+                        <p class="text-muted">Track and manage material and equipment deliveries</p>
+                    </div>
+                    <button class="btn btn-primary" id="addDeliveryBtn">
+                        <i class="bi bi-plus-circle me-2"></i>Schedule Delivery
+                    </button>
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control search-input" placeholder="Search deliveries..." data-target=".delivery-card">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="d-flex gap-2 justify-content-end">
+                            <select class="form-select w-auto">
+                                <option>All Projects</option>
+                                <option>Downtown Highrise</option>
+                                <option>Westside Office Complex</option>
+                                <option>Harbor View Apartments</option>
+                            </select>
+                            <input type="date" class="form-control w-auto" id="dateFilter">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Tabs -->
+                <ul class="nav nav-tabs mb-4" id="deliveryTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">
+                            All Deliveries
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="scheduled-tab" data-bs-toggle="tab" data-bs-target="#scheduled" type="button" role="tab">
+                            Scheduled
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab">
+                            Pending
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab">
+                            Completed
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="delayed-tab" data-bs-toggle="tab" data-bs-target="#delayed" type="button" role="tab">
+                            Delayed
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Deliveries Content -->
+                <div class="tab-content" id="deliveryTabContent">
+                    <div class="tab-pane fade show active" id="all" role="tabpanel">
+                        <div class="row" id="all-deliveries">
+                            <!-- Delivery cards will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Schedule Delivery Modal -->
+    <div class="modal fade" id="addDeliveryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Schedule Delivery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" data-notify="true" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="deliveryProject" class="form-label">Project</label>
+                                <select class="form-select" id="deliveryProject" required>
+                                    <option value="">Choose...</option>
+                                    <option>Downtown Highrise</option>
+                                    <option>Westside Office Complex</option>
+                                    <option>Harbor View Apartments</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a project.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="deliverySupplier" class="form-label">Supplier</label>
+                                <select class="form-select" id="deliverySupplier" required>
+                                    <option value="">Choose...</option>
+                                    <option>Acme Construction Supplies</option>
+                                    <option>Metro Steel Inc.</option>
+                                    <option>Elite Electrical Contractors</option>
+                                    <option>TechAir Systems</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a supplier.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="deliveryLocation" class="form-label">Location</label>
+                                <input type="text" class="form-control" id="deliveryLocation" required>
+                                <div class="invalid-feedback">Please provide a delivery location.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="deliveryDate" class="form-label">Delivery Date</label>
+                                <input type="datetime-local" class="form-control" id="deliveryDate" required>
+                                <div class="invalid-feedback">Please select a delivery date.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deliveryItems" class="form-label">Items</label>
+                            <select class="form-select" id="deliveryItems" multiple required>
+                                <option>Steel Beams - I-Beam 12" (25 Ton)</option>
+                                <option>Concrete Mix - High Strength (120 Cubic Yard)</option>
+                                <option>HVAC System - Central Unit (2 Unit)</option>
+                                <option>Low-E Glass Windows (1200 Sq. Feet)</option>
+                            </select>
+                            <div class="invalid-feedback">Please select items for delivery.</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Schedule Delivery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Initialize page with data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Insert sidebar
+            document.getElementById('sidebar-container').innerHTML = createSidebar('deliveries');
+            
+            // Delivery data
+            const deliveries = [
+                {
+                    id: 'DEL-2023-004',
+                    status: 'Pending',
+                    statusColor: 'warning',
+                    project: 'Downtown Highrise',
+                    supplier: 'Metro Steel Inc.',
+                    location: 'Main Building Site',
+                    expectedDate: 'Jun 17, 2023',
+                    items: ['Steel Beams - I-Beam 12" (25 Ton)']
+                },
+                {
+                    id: 'DEL-2023-002',
+                    status: 'Scheduled',
+                    statusColor: 'primary',
+                    project: 'Westside Office Complex',
+                    supplier: 'TechAir Systems',
+                    location: 'North Wing',
+                    expectedDate: 'Jun 14, 2023',
+                    items: ['HVAC System - Central Unit (2 Unit)']
+                },
+                {
+                    id: 'DEL-2023-001',
+                    status: 'Completed',
+                    statusColor: 'success',
+                    project: 'Downtown Highrise',
+                    supplier: 'Acme Construction Supplies',
+                    location: 'Main Building Site',
+                    expectedDate: 'Jun 8, 2023',
+                    deliveredDate: 'Jun 9, 2023',
+                    items: ['Steel Beams - I-Beam 12" (25 Ton)', 'Concrete Mix - High Strength (120 Cubic Yard)']
+                },
+                {
+                    id: 'DEL-2023-003',
+                    status: 'Delayed',
+                    statusColor: 'danger',
+                    project: 'Harbor View Apartments',
+                    supplier: 'Westcoast Windows & Doors',
+                    location: 'Building A',
+                    expectedDate: 'Jun 7, 2023',
+                    deliveredDate: 'Jun 11, 2023',
+                    items: ['Low-E Glass Windows (1200 Sq. Feet)']
+                },
+                {
+                    id: 'DEL-2023-005',
+                    status: 'Completed',
+                    statusColor: 'success',
+                    project: 'Harbor View Apartments',
+                    supplier: 'Elite Electrical Contractors',
+                    location: 'Building B',
+                    expectedDate: 'Jun 4, 2023',
+                    deliveredDate: 'Jun 4, 2023',
+                    items: ['Copper Wiring - 12 Gauge (15000 Feet)']
+                }
+            ];
+            
+            // Render deliveries
+            const deliveriesContainer = document.getElementById('all-deliveries');
+            deliveries.forEach(delivery => {
+                deliveriesContainer.innerHTML += createDeliveryCard(delivery);
+            });
+            
+            // Setup modal handlers and other functionality
+            setupModalHandlers();
+            setupFormValidations();
+            setupSearchFunctionality();
+        });
+        
+        // Create Delivery Card function
+        function createDeliveryCard(delivery) {
+            return `
+            <div class="col-md-4 mb-4">
+                <div class="delivery-card dashboard-card hover-shadow">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h6 class="text-primary">${delivery.id}</h6>
+                        <span class="badge bg-${delivery.statusColor}">${delivery.status}</span>
+                    </div>
+                    <h5 class="mb-2">${delivery.project}</h5>
+                    <div class="mb-2">
+                        <i class="bi bi-building text-muted me-1"></i>
+                        <strong>Supplier:</strong> ${delivery.supplier}
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-geo-alt text-muted me-1"></i>
+                        <strong>Location:</strong> ${delivery.location}
+                    </div>
+                    <div class="mb-2">
+                        <i class="bi bi-calendar text-muted me-1"></i>
+                        <strong>Expected:</strong> ${delivery.expectedDate}
+                    </div>
+                    ${delivery.deliveredDate ? `
+                    <div class="mb-2">
+                        <i class="bi bi-check-circle text-muted me-1"></i>
+                        <strong>Delivered:</strong> ${delivery.deliveredDate}
+                    </div>` : ''}
+                    <div class="mb-3">
+                        <strong>Items:</strong>
+                        <ul class="mb-0 ps-3">
+                            ${delivery.items.map(item => `<li class="small">${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-outline-primary flex-grow-1">View Details</button>
+                        ${delivery.status === 'Pending' ? '<button class="btn btn-sm btn-success flex-grow-1">Confirm</button>' : ''}
+                    </div>
+                </div>
+            </div>`;
+        }
+    </script>
+</body>
+</html>

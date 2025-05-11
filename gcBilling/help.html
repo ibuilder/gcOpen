@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQs - GCBilling</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Container -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="content-header">
+            <div>
+                <h1 class="h4 mb-0"><i class="fas fa-question-circle me-2"></i>Help & FAQs</h1>
+            </div>
+        </header>
+        
+        <!-- Content Body -->
+        <div class="content-body">
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-4" id="helpTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">
+                        General
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="project-info-faq-tab" data-bs-toggle="tab" data-bs-target="#project-info-faq" type="button" role="tab">
+                        Project Info
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="applications-faq-tab" data-bs-toggle="tab" data-bs-target="#applications-faq" type="button" role="tab">
+                        Applications
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="sov-faq-tab" data-bs-toggle="tab" data-bs-target="#sov-faq" type="button" role="tab">
+                        Schedule of Values
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="gc-faq-tab" data-bs-toggle="tab" data-bs-target="#gc-faq" type="button" role="tab">
+                        General Conditions
+                    </button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="helpTabContent">
+                <!-- General Tab -->
+                <div class="tab-pane fade show active" id="general" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">General Questions</h5>
+                            <p class="text-muted">Basic information about GCBilling application</p>
+                            
+                            <div class="accordion" id="generalAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general1">
+                                            What is GCBilling?
+                                        </button>
+                                    </h2>
+                                    <div id="general1" class="accordion-collapse collapse show" data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            GCBilling is a comprehensive construction billing application designed for General Contractors to manage project financial aspects including:
+                                            <ul>
+                                                <li>Schedule of Values management</li>
+                                                <li>Applications for Payment in AIA G702/G703 format</li>
+                                                <li>Change order tracking</li>
+                                                <li>Budget tracking</li>
+                                                <li>General Conditions tracking</li>
+                                                <li>Project team organization charts</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general2">
+                                            How do I navigate the application?
+                                        </button>
+                                    </h2>
+                                    <div id="general2" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            Use the sidebar menu on the left to navigate between different sections:
+                                            <ul>
+                                                <li><strong>Dashboard</strong>: Overview of your project financials</li>
+                                                <li><strong>Project Information</strong>: Basic project details</li>
+                                                <li><strong>Budget (GMP)</strong>: Budget tracking and management</li>
+                                                <li><strong>Applications</strong>: Manage payment applications</li>
+                                                <li><strong>Change Orders</strong>: Track and create change orders</li>
+                                                <li><strong>Reports</strong>: Generate various financial reports</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general3">
+                                            What do I do if I encounter an error?
+                                        </button>
+                                    </h2>
+                                    <div id="general3" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            If you encounter an error:
+                                            <ol>
+                                                <li>Try refreshing the page</li>
+                                                <li>Clear your browser cache</li>
+                                                <li>Check your internet connection</li>
+                                                <li>If the problem persists, contact support</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general4">
+                                            What are the settings for?
+                                        </button>
+                                    </h2>
+                                    <div id="general4" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            The settings section allows you to:
+                                            <ul>
+                                                <li>Update project information</li>
+                                                <li>Manage cost codes for expense tracking</li>
+                                                <li>Configure general conditions categories</li>
+                                                <li>Set notification preferences</li>
+                                                <li>Update password and user profile</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general5">
+                                            Do notifications work in this application?
+                                        </button>
+                                    </h2>
+                                    <div id="general5" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            Yes, notifications are available for:
+                                            <ul>
+                                                <li>Application approvals</li>
+                                                <li>Change order updates</li>
+                                                <li>Project milestone reminders</li>
+                                                <li>System announcements</li>
+                                            </ul>
+                                            You can manage your notification preferences in the User settings.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Info Tab -->
+                <div class="tab-pane fade" id="project-info-faq" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">Project Information</h5>
+                            <p class="text-muted">How to manage and edit project details</p>
+                            
+                            <div class="accordion" id="projectAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#project1">
+                                            How do I edit my project information?
+                                        </button>
+                                    </h2>
+                                    <div id="project1" class="accordion-collapse collapse show" data-bs-parent="#projectAccordion">
+                                        <div class="accordion-body">
+                                            To edit project information:
+                                            <ol>
+                                                <li>Navigate to Settings → Project Information</li>
+                                                <li>Update the required fields</li>
+                                                <li>Click "Save Changes" to save your updates</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#project2">
+                                            Can I manage multiple projects at once?
+                                        </button>
+                                    </h2>
+                                    <div id="project2" class="accordion-collapse collapse" data-bs-parent="#projectAccordion">
+                                        <div class="accordion-body">
+                                            Currently, GCBilling is designed to manage one project at a time. You can switch between projects using the project selector in the dashboard.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#project3">
+                                            What is the retainage rate used for?
+                                        </button>
+                                    </h2>
+                                    <div id="project3" class="accordion-collapse collapse" data-bs-parent="#projectAccordion">
+                                        <div class="accordion-body">
+                                            The retainage rate is the percentage of each payment that is held back until project completion. This is typically set between 5-10% and is automatically calculated in applications for payment.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#project4">
+                                            What's the difference between Original and Current Contract Sum?
+                                        </button>
+                                    </h2>
+                                    <div id="project4" class="accordion-collapse collapse" data-bs-parent="#projectAccordion">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li><strong>Original Contract Sum</strong>: The initial contract amount before any changes</li>
+                                                <li><strong>Current Contract Sum</strong>: The original amount plus approved change orders</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Applications Tab -->
+                <div class="tab-pane fade" id="applications-faq" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">Application for Payment</h5>
+                            <p class="text-muted">Questions about managing payment applications</p>
+                            
+                            <div class="accordion" id="applicationsAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#apps1">
+                                            How do I create a new Application for Payment?
+                                        </button>
+                                    </h2>
+                                    <div id="apps1" class="accordion-collapse collapse show" data-bs-parent="#applicationsAccordion">
+                                        <div class="accordion-body">
+                                            To create a new application:
+                                            <ol>
+                                                <li>Go to Applications section</li>
+                                                <li>Click "New Application"</li>
+                                                <li>Fill out the period dates and details</li>
+                                                <li>System will auto-calculate values from SOV</li>
+                                                <li>Review and submit</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#apps2">
+                                            How do I add percent complete for SOV items in an application?
+                                        </button>
+                                    </h2>
+                                    <div id="apps2" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion">
+                                        <div class="accordion-body">
+                                            When creating an application:
+                                            <ol>
+                                                <li>The system shows all SOV line items</li>
+                                                <li>Update the % complete for each item</li>
+                                                <li>Values are calculated automatically</li>
+                                                <li>Review the continuation sheet for accuracy</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#apps3">
+                                            How do I export my application in AIA G702/G703 format?
+                                        </button>
+                                    </h2>
+                                    <div id="apps3" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion">
+                                        <div class="accordion-body">
+                                            To export in AIA format:
+                                            <ol>
+                                                <li>Open the application you want to export</li>
+                                                <li>Click "Export" button</li>
+                                                <li>Select "AIA G702/G703" format</li>
+                                                <li>Choose PDF or Excel format</li>
+                                                <li>Download the file</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#apps4">
+                                            What are the different application statuses?
+                                        </button>
+                                    </h2>
+                                    <div id="apps4" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion">
+                                        <div class="accordion-body">
+                                            Application statuses include:
+                                            <ul>
+                                                <li><strong>Draft</strong>: In progress, not submitted</li>
+                                                <li><strong>Pending</strong>: Submitted, awaiting approval</li>
+                                                <li><strong>Approved</strong>: Approved by client</li>
+                                                <li><strong>Rejected</strong>: Requires revisions</li>
+                                                <li><strong>Paid</strong>: Payment received</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Schedule of Values Tab -->
+                <div class="tab-pane fade" id="sov-faq" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">Schedule of Values</h5>
+                            <p class="text-muted">Information about managing SOV line items</p>
+                            
+                            <div class="accordion" id="sovAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sov1">
+                                            What is a Schedule of Values (SOV)?
+                                        </button>
+                                    </h2>
+                                    <div id="sov1" class="accordion-collapse collapse show" data-bs-parent="#sovAccordion">
+                                        <div class="accordion-body">
+                                            A Schedule of Values is a detailed breakdown of the contract sum into various work items or components. It's used to track progress and calculate payment applications throughout the project.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sov2">
+                                            How do I create SOV items?
+                                        </button>
+                                    </h2>
+                                    <div id="sov2" class="accordion-collapse collapse" data-bs-parent="#sovAccordion">
+                                        <div class="accordion-body">
+                                            To create SOV items:
+                                            <ol>
+                                                <li>Go to Schedule of Values section</li>
+                                                <li>Click "Add Item"</li>
+                                                <li>Enter item number, description, and value</li>
+                                                <li>Assign appropriate cost code</li>
+                                                <li>Save the item</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sov3">
+                                            How should I organize my SOV items?
+                                        </button>
+                                    </h2>
+                                    <div id="sov3" class="accordion-collapse collapse" data-bs-parent="#sovAccordion">
+                                        <div class="accordion-body">
+                                            Best practices for organizing SOV:
+                                            <ul>
+                                                <li>Use CSI MasterFormat divisions for numbering</li>
+                                                <li>Group similar work items together</li>
+                                                <li>Include general conditions as line items</li>
+                                                <li>Break down major components into manageable items</li>
+                                                <li>Ensure the total equals the contract sum</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sov4">
+                                            Can I update SOV items after creating applications?
+                                        </button>
+                                    </h2>
+                                    <div id="sov4" class="accordion-collapse collapse" data-bs-parent="#sovAccordion">
+                                        <div class="accordion-body">
+                                            Yes, but with limitations:
+                                            <ul>
+                                                <li>You can add new items for change orders</li>
+                                                <li>Descriptions can be updated</li>
+                                                <li>Values should not be changed after approved applications</li>
+                                                <li>Use change orders to modify contract values</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- General Conditions Tab -->
+                <div class="tab-pane fade" id="gc-faq" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="mb-3">General Conditions</h5>
+                            <p class="text-muted">Managing general conditions and categories</p>
+                            
+                            <div class="accordion" id="gcAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gc1">
+                                            What are General Conditions in construction?
+                                        </button>
+                                    </h2>
+                                    <div id="gc1" class="accordion-collapse collapse show" data-bs-parent="#gcAccordion">
+                                        <div class="accordion-body">
+                                            General Conditions are indirect project costs that support the construction work but aren't part of the physical building. Examples include:
+                                            <ul>
+                                                <li>Project management staff</li>
+                                                <li>Temporary facilities</li>
+                                                <li>Site security</li>
+                                                <li>Equipment rental</li>
+                                                <li>Quality control testing</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gc2">
+                                            How do I add General Conditions categories?
+                                        </button>
+                                    </h2>
+                                    <div id="gc2" class="accordion-collapse collapse" data-bs-parent="#gcAccordion">
+                                        <div class="accordion-body">
+                                            To add GC categories:
+                                            <ol>
+                                                <li>Go to Settings → General Conditions</li>
+                                                <li>Click "Add Category"</li>
+                                                <li>Enter category name and description</li>
+                                                <li>Save the category</li>
+                                                <li>These categories help organize GC items</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gc3">
+                                            How do I track General Conditions expenses?
+                                        </button>
+                                    </h2>
+                                    <div id="gc3" class="accordion-collapse collapse" data-bs-parent="#gcAccordion">
+                                        <div class="accordion-body">
+                                            Track GC expenses by:
+                                            <ol>
+                                                <li>Creating GC line items in your SOV</li>
+                                                <li>Assigning appropriate categories</li>
+                                                <li>Updating progress in applications</li>
+                                                <li>Monitoring actual vs budgeted costs</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gc4">
+                                            Should General Conditions be included in the SOV?
+                                        </button>
+                                    </h2>
+                                    <div id="gc4" class="accordion-collapse collapse" data-bs-parent="#gcAccordion">
+                                        <div class="accordion-body">
+                                            Yes, General Conditions should be included in the SOV as line items. This allows you to:
+                                            <ul>
+                                                <li>Bill for GC costs progressively</li>
+                                                <li>Track actual vs planned GC expenses</li>
+                                                <li>Maintain transparency with the client</li>
+                                                <li>Include GC in payment applications</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Component Loader -->
+    <script src="assets/js/component-loader.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

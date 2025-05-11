@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="40" fill="#6c757d" opacity="0.2"/>
+  <path d="M60 20 A40 40 0 0 1 100 60 L60 60 Z" fill="#2e7d32" opacity="0.6"/>
+  <path d="M100 60 A40 40 0 0 1 60 100 L60 60 Z" fill="#1976d2" opacity="0.6"/>
+  <path d="M60 100 A40 40 0 0 1 20 60 L60 60 Z" fill="#f57c00" opacity="0.6"/>
+  <path d="M20 60 A40 40 0 0 1 60 20 L60 60 Z" fill="#7b1fa2" opacity="0.6"/>
+</svg>

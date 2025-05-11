@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- Cloud -->
+  <path d="M8,8 Q5,8 5,11 Q5,14 8,14 L16,14 Q19,14 19,11 Q19,8 16,8 Q16,5 13,5 Q10,5 10,8 Q9,7 8,8" 
+        fill="#90a4ae" stroke="#607d8b" stroke-width="1"/>
+  <!-- Rain drops -->
+  <g stroke="#1976d2" stroke-width="2" stroke-linecap="round">
+    <line x1="8" y1="16" x2="8" y2="19"/>
+    <line x1="12" y1="16" x2="12" y2="20"/>
+    <line x1="16" y1="16" x2="16" y2="19"/>
+    <line x1="10" y1="18" x2="10" y2="21"/>
+    <line x1="14" y1="18" x2="14" y2="21"/>
+  </g>
+</svg>

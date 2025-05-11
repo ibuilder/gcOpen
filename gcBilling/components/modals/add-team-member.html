@@ -1,0 +1,66 @@
+<!-- Add Team Member Modal -->
+<div class="modal fade" id="addTeamMemberModal" tabindex="-1" aria-labelledby="addTeamMemberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTeamMemberModalLabel">Add Team Member</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addTeamMemberForm" onsubmit="handleTeamMemberSubmit(event)">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="memberName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="memberName" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="memberRole" class="form-label">Role/Title</label>
+                        <input type="text" class="form-control" id="memberRole" placeholder="e.g., Project Manager, Site Supervisor" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="memberCompany" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="memberCompany" placeholder="Company name">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="memberEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="memberEmail" placeholder="email@example.com" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="memberPhone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="memberPhone" placeholder="+1 (555) 123-4567">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="memberReportsTo" class="form-label">Reports To</label>
+                        <select class="form-select" id="memberReportsTo">
+                            <option value="">None (Top Level)</option>
+                            <option value="1">Matt Emma - Project Manager</option>
+                            <!-- More team members would be dynamically populated here -->
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="memberResponsibilities" class="form-label">Key Responsibilities</label>
+                        <textarea class="form-control" id="memberResponsibilities" rows="3" placeholder="List main responsibilities..."></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Access Level</label>
+                        <select class="form-select" id="memberAccess">
+                            <option value="view">View Only</option>
+                            <option value="edit">Can Edit</option>
+                            <option value="admin">Administrator</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Team Member</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

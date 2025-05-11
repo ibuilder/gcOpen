@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Building Icon -->
+  <g fill="#0d6efd">
+    <!-- Main Building -->
+    <rect x="10" y="15" width="30" height="30" rx="2" fill="#0d6efd"/>
+    
+    <!-- Windows -->
+    <rect x="15" y="20" width="5" height="5" fill="white"/>
+    <rect x="25" y="20" width="5" height="5" fill="white"/>
+    <rect x="15" y="30" width="5" height="5" fill="white"/>
+    <rect x="25" y="30" width="5" height="5" fill="white"/>
+    
+    <!-- Door -->
+    <rect x="20" y="35" width="10" height="10" fill="white"/>
+    
+    <!-- Roof -->
+    <path d="M5 15 L25 5 L45 15 Z" fill="#0d6efd"/>
+  </g>
+  
+  <!-- Company Name -->
+  <text x="55" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0d6efd">GCBilling</text>
+  
+  <!-- Tagline (optional) -->
+  <text x="55" y="42" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">Construction Billing Management</text>
+</svg>

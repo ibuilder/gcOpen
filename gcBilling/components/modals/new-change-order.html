@@ -1,0 +1,93 @@
+<!-- New Change Order Modal -->
+<div class="modal fade" id="newChangeOrderModal" tabindex="-1" aria-labelledby="newChangeOrderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newChangeOrderModalLabel">New Change Order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="newChangeOrderForm" onsubmit="handleChangeOrderSubmit(event)">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="changeOrderNumber" class="form-label">Change Order Number</label>
+                                <input type="text" class="form-control" id="changeOrderNumber" placeholder="CO #" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="changeOrderDate" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="changeOrderDate" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="changeOrderStatus" class="form-label">Status</label>
+                                <select class="form-select" id="changeOrderStatus" required>
+                                    <option value="pending">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="changeOrderDescription" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="changeOrderDescription" placeholder="Brief description of the change" required>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="changeOrderAmount" class="form-label">Amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="changeOrderAmount" step="0.01" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="changeOrderCategory" class="form-label">Category</label>
+                                <select class="form-select" id="changeOrderCategory" required>
+                                    <option value="">Select category...</option>
+                                    <option value="scope">Scope Change</option>
+                                    <option value="design">Design Change</option>
+                                    <option value="site">Site Conditions</option>
+                                    <option value="owner">Owner Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="changeOrderReason" class="form-label">Reason for Change</label>
+                        <textarea class="form-control" id="changeOrderReason" rows="3" placeholder="Detailed explanation of why this change is needed" required></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="changeOrderImpact" class="form-label">Schedule Impact</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="changeOrderImpact" placeholder="0" min="0">
+                            <span class="input-group-text">days</span>
+                        </div>
+                        <small class="text-muted">Enter the number of days this change will add to the project schedule</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Attachments</label>
+                        <input type="file" class="form-control" id="changeOrderAttachments" multiple>
+                        <small class="text-muted">Attach supporting documents, drawings, or photos</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Change Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

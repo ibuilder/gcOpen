@@ -1,0 +1,569 @@
+/* General Styles */
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #f8f9fa;
+    --text-color: #212529;
+    --sidebar-bg: #34495e;
+    --sidebar-active: #2c3e50;
+    --border-color: #dee2e6;
+    --hover-color: #f8f9fa;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: white;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    transition: all 0.3s;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.search-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.search-box::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 0;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar-menu li a i {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.sidebar-menu li.active a,
+.sidebar-menu li a:hover {
+    background-color: var(--sidebar-active);
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.user-info p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.user-info small {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sign-out {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    flex: 1;
+    background-color: #f5f5f5;
+}
+
+.top-bar {
+    background-color: white;
+    padding: 12px 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.project-select {
+    width: 200px;
+    border: 1px solid var(--border-color);
+}
+
+.project-select-icon {
+    margin-left: -30px;
+    pointer-events: none;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main-content {
+    padding: 30px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Dashboard Stats Cards */
+.stat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.active-projects .stat-icon {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.qualified-bidders .stat-icon {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.open-bids .stat-icon {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.active-contracts .stat-icon {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.stat-info h3 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.stat-info p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Summary Cards */
+.summary-cards h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Activity & Deadline Items */
+.activity-item,
+.deadline-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.activity-item:last-child,
+.deadline-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon,
+.deadline-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: #f0f0f0;
+}
+
+.activity-info p,
+.deadline-info p {
+    margin: 0;
+}
+
+.activity-info small,
+.deadline-info small {
+    color: #6c757d;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Tables */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+    border-color: #1b5e20;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+/* Status Badges */
+.badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* Page specific styles */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+/* File Explorer styles */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.file-item {
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.file-item:hover {
+    transform: translateY(-2px);
+}
+
+.file-icon {
+    font-size: 48px;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.folder-icon {
+    color: #ffc107;
+}
+
+/* User Management styles */
+.user-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.admin-badge {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Budget Page */
+.budget-icon {
+    font-size: 120px;
+    color: #dee2e6;
+}
+
+/* Schedule of Values */
+.schedule-table {
+    width: 100%;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Reports Page */
+.report-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+}
+
+.report-item:last-child {
+    border-bottom: none;
+}
+
+/* Navigation Pills */
+.nav-pills .nav-link {
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: #6c757d;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+}
+
+/* Discipline colors */
+.discipline-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.discipline-badge.csi {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+/* Error states */
+.empty-message {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+/* File Upload Modal Styles */
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 60px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: #f8f9fa;
+}
+
+.upload-area.dragover {
+    border-color: var(--primary-color);
+    background-color: #e8f5e9;
+    border-width: 3px;
+}
+
+.upload-icon {
+    font-size: 4rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.upload-area h4 {
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.upload-area p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.file-list .list-group-item {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.file-list .file-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.file-list .file-icon {
+    margin-right: 10px;
+    color: #6c757d;
+}
+
+.file-list .file-name {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.file-list .file-size {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.file-list .remove-file {
+    color: #dc3545;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.file-list .remove-file:hover {
+    color: #c82333;
+}

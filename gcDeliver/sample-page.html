@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page - gcDeliver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <h1 class="mb-4">Sample Page</h1>
+                <p class="text-muted mb-4">This page demonstrates how to use the modular components</p>
+
+                <!-- Content will be inserted here -->
+                <div id="content-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Container for notifications -->
+    <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Example of how to use the modular components
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Insert sidebar
+            document.getElementById('sidebar-container').innerHTML = createSidebar('dashboard');
+            
+            // 2. Create sample data
+            const sampleProject = {
+                name: 'Sample Project',
+                client: 'Sample Client',
+                startDate: 'Jan 1, 2024',
+                endDate: 'Dec 31, 2024',
+                budget: 1000000,
+                manager: 'John Doe',
+                progress: 45,
+                status: 'Active',
+                statusColor: 'success'
+            };
+            
+            // 3. Insert content
+            const content = document.getElementById('content-container');
+            content.innerHTML = `
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Example Project Card</h3>
+                        <div class="row">
+                            ${createProjectCard(sampleProject)}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3>Example Dashboard Card</h3>
+                        <div class="row">
+                            ${createDashboardCard({
+                                title: 'Sample Metric',
+                                value: '123',
+                                trend: { direction: 'up', color: 'success', text: '5% increase' },
+                                badge: { type: 'new', text: '2 New' }
+                            })}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3>Example Button with Notification</h3>
+                        <button class="btn btn-primary" onclick="showNotification('This is a sample notification!', 'success')">
+                            Show Notification
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // 4. Initialize any additional functionality
+            setupModalHandlers();
+            setupFormValidations();
+        });
+    </script>
+</body>
+</html>
