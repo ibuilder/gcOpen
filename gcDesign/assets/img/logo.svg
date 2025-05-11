@@ -1,0 +1,14 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon -->
+  <g transform="translate(10, 10)">
+    <!-- Cube shape -->
+    <path d="M5 15 L20 5 L35 15 L35 35 L20 45 L5 35 Z" fill="#1a237e" stroke="#ffffff" stroke-width="1"/>
+    <path d="M5 15 L20 25 L35 15" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <path d="M20 25 L20 45" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <!-- GC letters -->
+    <text x="20" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">gc</text>
+  </g>
+  
+  <!-- Company Name -->
+  <text x="60" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1a237e">gcDesign</text>
+</svg>

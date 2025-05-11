@@ -1,0 +1,36 @@
+<!-- Header Component -->
+<header class="header">
+    <div class="d-flex align-items-center">
+        <button class="btn btn-link d-md-none p-0 me-3" id="sidebarToggle">
+            <i class="fas fa-bars fs-4"></i>
+        </button>
+        <h1 class="page-title" id="pageTitle">Dashboard</h1>
+    </div>
+    
+    <div class="header-actions">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search..." class="form-control">
+        </div>
+        
+        <div class="notification-badge">
+            <a href="#" class="text-dark">
+                <i class="fas fa-bell fs-5"></i>
+                <span class="badge">3</span>
+            </a>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" alt="Admin User" width="32" height="32" class="rounded-circle me-2">
+                <span class="d-none d-md-inline text-dark">Admin User</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</header>

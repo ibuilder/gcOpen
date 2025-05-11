@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permits & Inspections - gcDesign</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div id="header-container"></div>
+        
+        <!-- Permits Content -->
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3>Permits & Inspections</h3>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createPermitModal">
+                            <i class="fas fa-plus me-2"></i>New Permit
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-4" id="permitsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="active-tab" data-bs-toggle="tab" data-bs-target="#active" type="button" role="tab">Active</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab">Completed</button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="permitsTabContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-muted">No permits found. Create your first permit to get started.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="active" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-muted">No active permits found.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="completed" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-muted">No completed permits found.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Create Permit Modal -->
+    <div class="modal fade" id="createPermitModal" tabindex="-1" aria-labelledby="createPermitModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createPermitModalLabel">Create New Permit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="permitType" class="form-label">Permit Type</label>
+                            <select class="form-select" id="permitType">
+                                <option>Building Permit</option>
+                                <option>Electrical Permit</option>
+                                <option>Plumbing Permit</option>
+                                <option>Mechanical Permit</option>
+                                <option>Fire Safety Permit</option>
+                                <option>Demolition Permit</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="permitNumber" class="form-label">Permit Number</label>
+                                <input type="text" class="form-control" id="permitNumber" placeholder="e.g., BP-2023-001">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="permitStatus" class="form-label">Status</label>
+                                <select class="form-select" id="permitStatus">
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>In Review</option>
+                                    <option>Expired</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="permitIssuedDate" class="form-label">Date Issued</label>
+                                <input type="date" class="form-control" id="permitIssuedDate">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="permitExpiryDate" class="form-label">Expiry Date</label>
+                                <input type="date" class="form-control" id="permitExpiryDate">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="permitDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="permitDescription" rows="3" placeholder="Enter permit description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="permitInspections" class="form-label">Required Inspections</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="foundationInspection">
+                                <label class="form-check-label" for="foundationInspection">
+                                    Foundation Inspection
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="framingInspection">
+                                <label class="form-check-label" for="framingInspection">
+                                    Framing Inspection
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="electricalInspection">
+                                <label class="form-check-label" for="electricalInspection">
+                                    Electrical Inspection
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="plumbingInspection">
+                                <label class="form-check-label" for="plumbingInspection">
+                                    Plumbing Inspection
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="finalInspection">
+                                <label class="form-check-label" for="finalInspection">
+                                    Final Inspection
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="permitAttachments" class="form-label">Attachments</label>
+                            <input type="file" class="form-control" id="permitAttachments" multiple>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Create Permit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Embedded Components -->
+    <script src="assets/js/embedded-components.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
