@@ -1,0 +1,41 @@
+<!-- Header component -->
+<div class="header">
+  <div class="header-title">
+    <h1><span id="page-title">Dashboard</span></h1>
+  </div>
+  <div class="header-actions">
+    <div class="header-search">
+      <input type="text" class="form-control search-filter" id="search-filter" placeholder="Search...">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-outline-primary" id="filterBtn" data-bs-toggle="modal" data-bs-target="#filterModal">
+        <i class="fas fa-filter"></i>
+        <span>Filter</span>
+        <span class="badge bg-primary" id="filter-indicator" style="display: none;">0</span>
+      </button>
+      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Filter Options</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#" id="clear-filters">Clear All Filters</a></li>
+        <li><a class="dropdown-item" href="#" id="save-preset">Save Current Filters</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#" id="import-filters">Import Filters</a></li>
+        <li><a class="dropdown-item" href="#" id="export-filters">Export Filters</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-user-circle"></i>
+        <span>User</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="settings.html#user-preferences">User Preferences</a></li>
+        <li><a class="dropdown-item" href="settings.html#project-settings">Project Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

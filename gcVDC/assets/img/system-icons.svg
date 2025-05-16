@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- System Icons for gcVDC -->
+  
+  <!-- Structural System Icon -->
+  <g transform="translate(100, 100) scale(0.8)">
+    <rect x="-50" y="-50" width="100" height="100" fill="#0d6efd" rx="5" />
+    <rect x="-40" y="-40" width="80" height="10" fill="white" />
+    <rect x="-40" y="-20" width="80" height="10" fill="white" />
+    <rect x="-40" y="0" width="80" height="10" fill="white" />
+    <rect x="-40" y="20" width="80" height="10" fill="white" />
+    <text x="0" y="60" font-family="Arial, sans-serif" text-anchor="middle" fill="black" font-size="16">Structural</text>
+  </g>
+  
+  <!-- Mechanical System Icon -->
+  <g transform="translate(250, 100) scale(0.8)">
+    <circle cx="0" cy="0" r="50" fill="#0dcaf0" />
+    <g transform="translate(0, 0) scale(0.7)">
+      <path d="M0,-30 L25,15 L-25,15 Z" fill="white" transform="rotate(0)" />
+      <path d="M0,-30 L25,15 L-25,15 Z" fill="white" transform="rotate(120)" />
+      <path d="M0,-30 L25,15 L-25,15 Z" fill="white" transform="rotate(240)" />
+    </g>
+    <text x="0" y="60" font-family="Arial, sans-serif" text-anchor="middle" fill="black" font-size="16">Mechanical</text>
+  </g>
+  
+  <!-- Electrical System Icon -->
+  <g transform="translate(400, 100) scale(0.8)">
+    <polygon points="0,-50 40,25 -40,25" fill="#ffc107" />
+    <path d="M-10,0 L10,0 L5,20 L15,20 L0,40 L-5,20 L-15,20 Z" fill="white" />
+    <text x="0" y="60" font-family="Arial, sans-serif" text-anchor="middle" fill="black" font-size="16">Electrical</text>
+  </g>
+  
+  <!-- Plumbing System Icon -->
+  <g transform="translate(100, 250) scale(0.8)">
+    <circle cx="0" cy="0" r="50" fill="#20c997" />
+    <path d="M-20,-20 L20,-20 L20,0 L-20,0 Z" fill="white" />
+    <rect x="-5" y="-30" width="10" height="10" fill="white" />
+    <path d="M-15,0 L-15,30 C-15,40 15,40 15,30 L15,0 Z" fill="white" />
+    <text x="0" y="60" font-family="Arial, sans-serif" text-anchor="middle" fill="black" font-size="16">Plumbing</text>
+  </g>
+  
+  <!-- Fire Protection System Icon -->
+  <g transform="translate(250, 250) scale(0.8)">
+    <circle cx="0" cy="0" r="50" fill="#dc3545" />
+    <path d="M0,-40 Q-20,-30 -20,-10 Q-20,0 -10,10 Q-20,15 -10,30 Q0,20 10,30 Q20,15 10,10 Q20,0 20,-10 Q20,-30 0,-40 Z" fill="white" />
+    <text x="0" y="60" font-family="Arial, sans-serif" text-anchor="middle" fill="black" font-size="16">Fire Protection</text>
+  </g>
+  
+  <!-- Architectural System Icon -->
+  <g transform="translate(400, 250) scale(0.8)">
+    <rect x="-50" y="-50" width="100" height="100" fill="#6f42c1" rx="5" />
+    <path d="M-40,-35 L0,-50 L40,-35 L40,35 L0,50 L-40,35 Z" fill="white" />
+    <path d="M0,-50 L0,50" stroke="white" stroke-width="3" />
+    <path d="M-40,0 L40,0" stroke="white" stroke-width="3" />
+    <text x="0" y="60" font-family="Arial, sans-serif" text-anchor="middle" fill="black" font-size="16">Architectural</text>
+  </g>
+</svg>

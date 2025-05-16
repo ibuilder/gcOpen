@@ -1,0 +1,121 @@
+/* gcVDC - System Icons Sprite Sheet */
+
+.system-icon-sprite {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../img/system-icons.svg');
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.system-icon-sprite.large {
+  width: 48px;
+  height: 48px;
+}
+
+/* Icon positions in the sprite */
+.system-icon-structural {
+  background-position: 0 0;
+}
+
+.system-icon-mechanical {
+  background-position: -100px 0;
+}
+
+.system-icon-electrical {
+  background-position: -200px 0;
+}
+
+.system-icon-plumbing {
+  background-position: 0 -100px;
+}
+
+.system-icon-fire-protection {
+  background-position: -100px -100px;
+}
+
+.system-icon-architectural {
+  background-position: -200px -100px;
+}
+
+/* Status indicators */
+.status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status-not-started {
+  background-color: var(--not-started-color, #6c757d);
+}
+
+.status-in-progress {
+  background-color: var(--in-progress-color, #ffc107);
+}
+
+.status-complete {
+  background-color: var(--complete-color, #28a745);
+}
+
+.status-on-hold {
+  background-color: var(--on-hold-color, #dc3545);
+}
+
+/* Image containers */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-container:hover .img-overlay {
+  opacity: 1;
+}
+
+.img-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Image preloader */
+.preload-images {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  z-index: -1;
+}

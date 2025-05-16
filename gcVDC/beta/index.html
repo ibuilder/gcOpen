@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - gcVDC</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="wrapper">
+    <!-- Sidebar - loaded via direct HTML injection -->
+    <div id="sidebar-container">
+      <!-- Will be populated by component-loader.js -->
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header - loaded via direct HTML injection -->
+      <div id="header-container">
+        <!-- Will be populated by component-loader.js -->
+      </div>
+      
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <!-- Key Metrics -->
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Overall Progress</h5>
+                <div class="d-flex align-items-center">
+                  <div class="display-4 me-3">12%</div>
+                  <div class="progress flex-grow-1" style="height: 10px;">
+                    <div class="progress-bar" role="progressbar" style="width: 12%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Active Elements</h5>
+                <div class="d-flex align-items-center">
+                  <div class="display-4 me-3">42</div>
+                  <div class="progress flex-grow-1" style="height: 10px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Open Clashes</h5>
+                <div class="d-flex align-items-center">
+                  <div class="display-4 me-3">5/7</div>
+                  <div class="progress flex-grow-1" style="height: 10px;">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 71%;" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Last Update</h5>
+                <div class="d-flex align-items-center">
+                  <div class="h5 mb-0">Today</div>
+                  <div class="text-muted ms-2">11:20 AM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Progress by System -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mb-4">
+              <div class="card-header d-flex justify-content-between">
+                <span>Progress by System</span>
+                <div class="card-actions">
+                  <button class="btn btn-sm btn-outline-secondary" id="refreshChartsBtn">
+                    <i class="fas fa-sync-alt"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-2 col-6 mb-3">
+                    <div class="text-center">
+                      <h6>Structural</h6>
+                      <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar progress-bar-structural" role="progressbar" aria-label="Structural progress bar" style="width: 11%;" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="text-muted">11%</div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-6 mb-3">
+                    <div class="text-center">
+                      <h6>Mechanical</h6>
+                      <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar progress-bar-mechanical" role="progressbar" aria-label="Mechanical progress bar" style="width: 17%;" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="text-muted">17%</div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-6 mb-3">
+                    <div class="text-center">
+                      <h6>Electrical</h6>
+                      <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar progress-bar-electrical" role="progressbar" aria-label="Electrical progress bar" style="width: 17%;" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="text-muted">17%</div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-6 mb-3">
+                    <div class="text-center">
+                      <h6>Plumbing</h6>
+                      <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar progress-bar-plumbing" role="progressbar" aria-label="Plumbing progress bar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="text-muted">25%</div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-6 mb-3">
+                    <div class="text-center">
+                      <h6>Fire Protection</h6>
+                      <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar progress-bar-fire-protection" role="progressbar" aria-label="Fire Protection progress bar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="text-muted">0%</div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-6 mb-3">
+                    <div class="text-center">
+                      <h6>Architectural</h6>
+                      <div class="progress mb-2" style="height: 10px;">
+                        <div class="progress-bar progress-bar-architectural" role="progressbar" aria-label="Architectural progress bar" style="width: 13%;" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="text-muted">13%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Charts -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header d-flex justify-content-between">
+                <span>System Progress</span>
+                <div class="card-actions">
+                  <button class="btn btn-sm btn-outline-secondary download-chart" data-chart-id="systemProgressChart" data-filename="system-progress.png">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <canvas id="systemProgressChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header d-flex justify-content-between">
+                <span>Status Distribution</span>
+                <div class="card-actions">
+                  <button class="btn btn-sm btn-outline-secondary download-chart" data-chart-id="statusDistributionChart" data-filename="status-distribution.png">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <canvas id="statusDistributionChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mb-4">
+              <div class="card-header d-flex justify-content-between">
+                <span>Progress Trend</span>
+                <div class="card-actions">
+                  <button class="btn btn-sm btn-outline-secondary download-chart" data-chart-id="progressTrendChart" data-filename="progress-trend.png">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <canvas id="progressTrendChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Activity -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header">
+                <span>Recent Activity</span>
+              </div>
+              <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="activity-icon bg-warning text-white me-3">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">New clash detected</div>
+                      <div class="text-muted small">HVAC Duct vs. Structural Beam</div>
+                    </div>
+                    <div class="ms-auto text-muted small">10 min ago</div>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="activity-icon bg-info text-white me-3">
+                      <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">Status update</div>
+                      <div class="text-muted small">Element #32: Not Started → In Progress</div>
+                    </div>
+                    <div class="ms-auto text-muted small">1 hour ago</div>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="activity-icon bg-success text-white me-3">
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">Task completed</div>
+                      <div class="text-muted small">HVAC installation in Level 1, Zone A</div>
+                    </div>
+                    <div class="ms-auto text-muted small">2 hours ago</div>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="activity-icon bg-danger text-white me-3">
+                      <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">Issue reported</div>
+                      <div class="text-muted small">Structural support issue in Level 2, Zone C</div>
+                    </div>
+                    <div class="ms-auto text-muted small">yesterday</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-sm btn-outline-secondary">View All Activity</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header">
+                <span>Quick Tools</span>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <a href="clash-detection.html" class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center">
+                      <i class="fas fa-exclamation-triangle mb-2 fa-2x"></i>
+                      <span>Run Clash Detection</span>
+                      <small class="text-muted">Analyze model for conflicts</small>
+                    </a>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <a href="reports.html" class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center">
+                      <i class="fas fa-file-alt mb-2 fa-2x"></i>
+                      <span>Generate Progress Report</span>
+                      <small class="text-muted">Create detailed report</small>
+                    </a>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <a href="work-in-place.html" class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center">
+                      <i class="fas fa-map-marker-alt mb-2 fa-2x"></i>
+                      <span>Mark Up Model</span>
+                      <small class="text-muted">Update element statuses</small>
+                    </a>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <a href="#" class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center">
+                      <i class="fas fa-share-alt mb-2 fa-2x"></i>
+                      <span>Share View</span>
+                      <small class="text-muted">Export current model view</small>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modals Container -->
+  <div id="modals-container"></div>
+  
+  <!-- Toast Container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Component Loader (Direct HTML injection to avoid CORS) -->
+  <script src="assets/js/component-loader-fixed.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/modals.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/filters.js"></script>
+  
+  <!-- Page-specific scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize charts if necessary
+      if (window.gcVDC && window.gcVDC.initCharts) {
+        window.gcVDC.initCharts();
+      }
+      
+      // Initialize refresh charts button
+      const refreshChartsBtn = document.getElementById('refreshChartsBtn');
+      if (refreshChartsBtn) {
+        refreshChartsBtn.addEventListener('click', function() {
+          if (window.gcVDC && window.gcVDC.refreshCharts) {
+            window.gcVDC.refreshCharts();
+            
+            if (window.gcVDC.showToast) {
+              window.gcVDC.showToast('Charts refreshed successfully!', 'success');
+            }
+          }
+        });
+      }
+      
+      // Initialize chart download buttons
+      const downloadChartBtns = document.querySelectorAll('.download-chart');
+      downloadChartBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const chartId = this.getAttribute('data-chart-id');
+          const filename = this.getAttribute('data-filename');
+          
+          if (window.gcVDC && window.gcVDC.downloadChart) {
+            window.gcVDC.downloadChart(chartId, filename);
+          } else {
+            console.log(`Download chart: ${chartId} as ${filename}`);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

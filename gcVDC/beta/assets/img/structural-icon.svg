@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Structural System Icon -->
+  <rect x="5" y="5" width="90" height="90" fill="#0d6efd" rx="5" />
+  <rect x="15" y="15" width="70" height="10" fill="white" />
+  <rect x="15" y="35" width="70" height="10" fill="white" />
+  <rect x="15" y="55" width="70" height="10" fill="white" />
+  <rect x="15" y="75" width="70" height="10" fill="white" />
+</svg>

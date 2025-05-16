@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#f8f9fa" rx="4" />
+  
+  <!-- Grid lines -->
+  <g stroke="#e9ecef" stroke-width="1">
+    <line x1="0" y1="50" x2="600" y2="50" />
+    <line x1="0" y1="100" x2="600" y2="100" />
+    <line x1="0" y1="150" x2="600" y2="150" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="250" x2="600" y2="250" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="0" y1="350" x2="600" y2="350" />
+    
+    <line x1="50" y1="0" x2="50" y2="400" />
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="150" y1="0" x2="150" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="250" y1="0" x2="250" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="350" y1="0" x2="350" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="450" y1="0" x2="450" y2="400" />
+    <line x1="500" y1="0" x2="500" y2="400" />
+    <line x1="550" y1="0" x2="550" y2="400" />
+  </g>
+  
+  <!-- Coordinate axes -->
+  <line x1="300" y1="0" x2="300" y2="400" stroke="#adb5bd" stroke-width="2" />
+  <line x1="0" y1="200" x2="600" y2="200" stroke="#adb5bd" stroke-width="2" />
+  
+  <!-- Building outline -->
+  <rect x="200" y="100" width="200" height="200" fill="none" stroke="#007bff" stroke-width="3" />
+  
+  <!-- Interior elements (simplified) -->
+  <line x1="200" y1="150" x2="400" y2="150" stroke="#007bff" stroke-width="2" />
+  <line x1="200" y1="250" x2="400" y2="250" stroke="#007bff" stroke-width="2" />
+  <line x1="300" y1="100" x2="300" y2="300" stroke="#007bff" stroke-width="2" />
+  
+  <!-- Text -->
+  <text x="300" y="350" font-family="Arial, sans-serif" text-anchor="middle" fill="#6c757d" font-size="16">3D Model Visualization</text>
+  <text x="300" y="370" font-family="Arial, sans-serif" text-anchor="middle" fill="#6c757d" font-size="14">Load a model to view and analyze</text>
+</svg>

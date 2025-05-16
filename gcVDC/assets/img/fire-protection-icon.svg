@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fire Protection System Icon -->
+  <circle cx="50" cy="50" r="45" fill="#dc3545" />
+  <path d="M50,10 Q30,20 30,40 Q30,50 40,60 Q30,65 40,80 Q50,70 60,80 Q70,65 60,60 Q70,50 70,40 Q70,20 50,10 Z" fill="white" />
+</svg>

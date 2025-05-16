@@ -1,0 +1,433 @@
+<!-- Add Element Modal -->
+<div class="modal fade" id="addElementModal" tabindex="-1" aria-labelledby="addElementModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addElementModalLabel">Add New Element</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addElementForm">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="element-name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="element-name" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="element-type" class="form-label">Type</label>
+                <select class="form-control" id="element-type" required>
+                  <optgroup label="Structural">
+                    <option value="Structural Beam">Beam</option>
+                    <option value="Structural Column">Column</option>
+                    <option value="Foundation Wall">Foundation Wall</option>
+                  </optgroup>
+                  <optgroup label="Mechanical">
+                    <option value="HVAC Duct">HVAC Duct</option>
+                    <option value="HVAC Diffuser">HVAC Diffuser</option>
+                    <option value="HVAC Fan">Fan</option>
+                  </optgroup>
+                  <optgroup label="Electrical">
+                    <option value="Cable Tray">Cable Tray</option>
+                    <option value="Conduit">Conduit</option>
+                    <option value="Power Panel">Power Panel</option>
+                  </optgroup>
+                  <optgroup label="Plumbing">
+                    <option value="Water Supply Pipe">Water Supply Pipe</option>
+                    <option value="Drainage Pipe">Drainage Pipe</option>
+                    <option value="Fixture">Fixture</option>
+                  </optgroup>
+                  <optgroup label="Fire Protection">
+                    <option value="Sprinkler">Sprinkler</option>
+                    <option value="Fire Alarm">Fire Alarm</option>
+                    <option value="Fire Extinguisher">Fire Extinguisher</option>
+                  </optgroup>
+                  <optgroup label="Architectural">
+                    <option value="Wall">Wall</option>
+                    <option value="Door">Door</option>
+                    <option value="Window">Window</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="element-location" class="form-label">Location</label>
+                <select class="form-control" id="element-location" required>
+                  <option value="Level 1 - Zone A">Level 1 - Zone A</option>
+                  <option value="Level 1 - Zone B">Level 1 - Zone B</option>
+                  <option value="Level 1 - Zone C">Level 1 - Zone C</option>
+                  <option value="Level 2 - Zone A">Level 2 - Zone A</option>
+                  <option value="Level 2 - Zone B">Level 2 - Zone B</option>
+                  <option value="Level 2 - Zone C">Level 2 - Zone C</option>
+                  <option value="Level 3 - Zone A">Level 3 - Zone A</option>
+                  <option value="Level 3 - Zone B">Level 3 - Zone B</option>
+                  <option value="Level 3 - Zone C">Level 3 - Zone C</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="element-status" class="form-label">Status</label>
+                <select class="form-control" id="element-status" required>
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="complete">Complete</option>
+                  <option value="on-hold">On Hold</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Type-specific fields will be dynamically added here -->
+          <div id="type-specific-fields"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" form="addElementForm" class="btn btn-primary">Add Element</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Element Modal -->
+<div class="modal fade" id="editElementModal" tabindex="-1" aria-labelledby="editElementModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editElementModalLabel">Edit Element</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editElementForm">
+          <input type="hidden" id="edit-element-id">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="edit-element-name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="edit-element-name" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="edit-element-type" class="form-label">Type</label>
+                <select class="form-control" id="edit-element-type" required>
+                  <optgroup label="Structural">
+                    <option value="Structural Beam">Beam</option>
+                    <option value="Structural Column">Column</option>
+                    <option value="Foundation Wall">Foundation Wall</option>
+                  </optgroup>
+                  <optgroup label="Mechanical">
+                    <option value="HVAC Duct">HVAC Duct</option>
+                    <option value="HVAC Diffuser">HVAC Diffuser</option>
+                    <option value="HVAC Fan">Fan</option>
+                  </optgroup>
+                  <optgroup label="Electrical">
+                    <option value="Cable Tray">Cable Tray</option>
+                    <option value="Conduit">Conduit</option>
+                    <option value="Power Panel">Power Panel</option>
+                  </optgroup>
+                  <optgroup label="Plumbing">
+                    <option value="Water Supply Pipe">Water Supply Pipe</option>
+                    <option value="Drainage Pipe">Drainage Pipe</option>
+                    <option value="Fixture">Fixture</option>
+                  </optgroup>
+                  <optgroup label="Fire Protection">
+                    <option value="Sprinkler">Sprinkler</option>
+                    <option value="Fire Alarm">Fire Alarm</option>
+                    <option value="Fire Extinguisher">Fire Extinguisher</option>
+                  </optgroup>
+                  <optgroup label="Architectural">
+                    <option value="Wall">Wall</option>
+                    <option value="Door">Door</option>
+                    <option value="Window">Window</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="edit-element-location" class="form-label">Location</label>
+                <select class="form-control" id="edit-element-location" required>
+                  <option value="Level 1 - Zone A">Level 1 - Zone A</option>
+                  <option value="Level 1 - Zone B">Level 1 - Zone B</option>
+                  <option value="Level 1 - Zone C">Level 1 - Zone C</option>
+                  <option value="Level 2 - Zone A">Level 2 - Zone A</option>
+                  <option value="Level 2 - Zone B">Level 2 - Zone B</option>
+                  <option value="Level 2 - Zone C">Level 2 - Zone C</option>
+                  <option value="Level 3 - Zone A">Level 3 - Zone A</option>
+                  <option value="Level 3 - Zone B">Level 3 - Zone B</option>
+                  <option value="Level 3 - Zone C">Level 3 - Zone C</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="edit-element-status" class="form-label">Status</label>
+                <select class="form-control" id="edit-element-status" required>
+                  <option value="not-started">Not Started</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="complete">Complete</option>
+                  <option value="on-hold">On Hold</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Type-specific fields will be dynamically added here -->
+          <div id="edit-type-specific-fields"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" form="editElementForm" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Modal -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterModalLabel">Filter Elements</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="filter-summary mb-3 p-2 bg-light rounded" id="filterSummary">
+          All systems and statuses are selected.
+        </div>
+        
+        <h6>System Types</h6>
+        <div class="row mb-3">
+          <div class="col-md-4 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input system-filter-checkbox" type="checkbox" id="filter-structural" value="Structural" checked>
+              <label class="form-check-label" for="filter-structural">
+                <span class="type-indicator type-structural"></span> Structural
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input system-filter-checkbox" type="checkbox" id="filter-mechanical" value="Mechanical" checked>
+              <label class="form-check-label" for="filter-mechanical">
+                <span class="type-indicator type-mechanical"></span> Mechanical
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input system-filter-checkbox" type="checkbox" id="filter-electrical" value="Electrical" checked>
+              <label class="form-check-label" for="filter-electrical">
+                <span class="type-indicator type-electrical"></span> Electrical
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input system-filter-checkbox" type="checkbox" id="filter-plumbing" value="Plumbing" checked>
+              <label class="form-check-label" for="filter-plumbing">
+                <span class="type-indicator type-plumbing"></span> Plumbing
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input system-filter-checkbox" type="checkbox" id="filter-fire-protection" value="FirePrevention" checked>
+              <label class="form-check-label" for="filter-fire-protection">
+                <span class="type-indicator type-fire-protection"></span> Fire Protection
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input system-filter-checkbox" type="checkbox" id="filter-architectural" value="Architectural" checked>
+              <label class="form-check-label" for="filter-architectural">
+                <span class="type-indicator type-architectural"></span> Architectural
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <h6>Status</h6>
+        <div class="row mb-3">
+          <div class="col-md-3 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input status-filter-checkbox" type="checkbox" id="filter-not-started" value="not-started" checked>
+              <label class="form-check-label" for="filter-not-started">
+                <span class="badge badge-not-started">Not Started</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input status-filter-checkbox" type="checkbox" id="filter-in-progress" value="in-progress" checked>
+              <label class="form-check-label" for="filter-in-progress">
+                <span class="badge badge-in-progress">In Progress</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input status-filter-checkbox" type="checkbox" id="filter-complete" value="complete" checked>
+              <label class="form-check-label" for="filter-complete">
+                <span class="badge badge-complete">Complete</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="form-check">
+              <input class="form-check-input status-filter-checkbox" type="checkbox" id="filter-on-hold" value="on-hold" checked>
+              <label class="form-check-label" for="filter-on-hold">
+                <span class="badge badge-on-hold">On Hold</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <h6>Additional Filters</h6>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="location-filter" class="form-label">Location</label>
+              <input type="text" class="form-control" id="location-filter" placeholder="Enter location">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group mb-3">
+              <label for="level-filter" class="form-label">Level</label>
+              <select class="form-control" id="level-filter">
+                <option value="">All Levels</option>
+                <option value="Level 1">Level 1</option>
+                <option value="Level 2">Level 2</option>
+                <option value="Level 3">Level 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group mb-3">
+              <label for="zone-filter" class="form-label">Zone</label>
+              <select class="form-control" id="zone-filter">
+                <option value="">All Zones</option>
+                <option value="Zone A">Zone A</option>
+                <option value="Zone B">Zone B</option>
+                <option value="Zone C">Zone C</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="date-range-start" class="form-label">Date Range Start</label>
+              <input type="date" class="form-control" id="date-range-start">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="date-range-end" class="form-label">Date Range End</label>
+              <input type="date" class="form-control" id="date-range-end">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="preset-dropdown" class="form-label">Filter Presets</label>
+              <select class="form-control" id="preset-dropdown">
+                <option value="">Select Preset</option>
+                <!-- Presets will be dynamically loaded here -->
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-end">
+            <div class="form-group mb-3 w-100">
+              <button type="button" class="btn btn-outline-danger w-100" id="delete-preset">
+                Delete Selected Preset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" id="resetFilters">Reset Filters</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="applyFilters">Apply Filters</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Clash Detail Modal -->
+<div class="modal fade" id="clashDetailModal" tabindex="-1" aria-labelledby="clashDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="clashDetailModalLabel">Clash Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" class="clash-id" value="">
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <h6>Element 1</h6>
+            <p id="clash-element1"></p>
+          </div>
+          <div class="col-md-6">
+            <h6>Element 2</h6>
+            <p id="clash-element2"></p>
+          </div>
+        </div>
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <h6>Location</h6>
+            <p id="clash-location"></p>
+          </div>
+          <div class="col-md-6">
+            <h6>Severity</h6>
+            <p id="clash-severity"></p>
+          </div>
+        </div>
+        
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <h6>Status</h6>
+            <p id="clash-status"></p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <h6>Resolution</h6>
+            <select class="form-control" id="clash-resolution">
+              <option value="">Select Resolution</option>
+              <option value="Move Element 1">Move Element 1</option>
+              <option value="Move Element 2">Move Element 2</option>
+              <option value="Modify Both Elements">Modify Both Elements</option>
+              <option value="Accept Clash">Accept Clash</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="resolveClashBtn">Resolve Clash</button>
+      </div>
+    </div>
+  </div>
+</div>

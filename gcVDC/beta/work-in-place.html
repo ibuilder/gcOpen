@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work In Place Tracking - gcVDC</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="work-in-place">
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <i class="fas fa-cubes fa-lg text-primary"></i>
+        <span>gcVDC</span>
+      </div>
+      <div class="sidebar-nav">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link" id="nav-dashboard">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="work-in-place.html" class="nav-link active" id="nav-work-in-place">
+            <i class="fas fa-tasks"></i>
+            <span>Work In Place</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="clash-detection.html" class="nav-link" id="nav-clash-detection">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>Clash Detection</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="reports.html" class="nav-link" id="nav-reports">
+            <i class="fas fa-chart-bar"></i>
+            <span>Reports</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="plans.html" class="nav-link" id="nav-plans">
+            <i class="fas fa-map"></i>
+            <span>Plans</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="settings.html" class="nav-link" id="nav-settings">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <button type="button" class="btn btn-sm btn-outline-secondary" id="toggle-sidebar" title="Toggle Sidebar">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" id="theme-switcher" title="Switch Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-title">
+          <h1><span id="page-title">Work In Place</span></h1>
+        </div>
+        <div class="header-actions">
+          <div class="header-search">
+            <input type="text" class="form-control search-filter" id="search-filter" placeholder="Search...">
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-primary" id="filterBtn" data-bs-toggle="modal" data-bs-target="#filterModal">
+              <i class="fas fa-filter"></i>
+              <span>Filter</span>
+              <span class="badge bg-primary" id="filter-indicator" style="display: none;">0</span>
+            </button>
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Filter Options</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" id="clear-filters">Clear All Filters</a></li>
+              <li><a class="dropdown-item" href="#" id="save-preset">Save Current Filters</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" id="import-filters">Import Filters</a></li>
+              <li><a class="dropdown-item" href="#" id="export-filters">Export Filters</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user-circle"></i>
+              <span>User</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="settings.html#user-preferences">User Preferences</a></li>
+              <li><a class="dropdown-item" href="settings.html#project-settings">Project Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" id="logout-btn">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Work In Place Content -->
+      <div class="work-in-place-content">
+        <!-- Progress Summary -->
+        <div class="row">
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Overall Progress</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">12%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: 12%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Structural</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">11%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 11%;" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Mechanical</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">17%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 17%;" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Electrical</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">14%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 14%;" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Plumbing</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">19%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 19%;" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Fire Protection</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">7%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 7%;" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Architectural</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">13%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 13%;" aria-valuenow="13" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title text-center">Equipment</h6>
+                <div class="text-center mb-2">
+                  <span class="display-5">5%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-dark" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Elements List -->
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+              <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="structural-tab" data-bs-toggle="tab" data-bs-target="#structural" type="button" role="tab" aria-controls="structural" aria-selected="false">Structural</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="mechanical-tab" data-bs-toggle="tab" data-bs-target="#mechanical" type="button" role="tab" aria-controls="mechanical" aria-selected="false">Mechanical</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="electrical-tab" data-bs-toggle="tab" data-bs-target="#electrical" type="button" role="tab" aria-controls="electrical" aria-selected="false">Electrical</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="plumbing-tab" data-bs-toggle="tab" data-bs-target="#plumbing" type="button" role="tab" aria-controls="plumbing" aria-selected="false">Plumbing</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="fire-protection-tab" data-bs-toggle="tab" data-bs-target="#fire-protection" type="button" role="tab" aria-controls="fire-protection" aria-selected="false">Fire Protection</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="architectural-tab" data-bs-toggle="tab" data-bs-target="#architectural" type="button" role="tab" aria-controls="architectural" aria-selected="false">Architectural</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="equipment-tab" data-bs-toggle="tab" data-bs-target="#equipment" type="button" role="tab" aria-controls="equipment" aria-selected="false">Equipment</button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary" id="addElementBtn">
+                <i class="fas fa-plus"></i> Add Element
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                <div class="table-responsive">
+                  <table class="table table-hover elements-table filterable-table">
+                    <thead>
+                      <tr>
+                        <th>Element ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Progress</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Structural Element -->
+                      <tr data-system="Structural" data-status="in-progress">
+                        <td>E-001</td>
+                        <td>Column B3</td>
+                        <td><span class="badge bg-primary">Structural</span> Column</td>
+                        <td>Level 1 - Zone C</td>
+                        <td><span class="badge bg-warning">In Progress</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">45%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-001">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- Mechanical Element -->
+                      <tr data-system="Mechanical" data-status="not-started">
+                        <td>E-002</td>
+                        <td>AHU Supply Duct</td>
+                        <td><span class="badge bg-info">Mechanical</span> HVAC Duct</td>
+                        <td>Level 2 - Zone A</td>
+                        <td><span class="badge bg-secondary">Not Started</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">0%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-002">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- Electrical Element -->
+                      <tr data-system="Electrical" data-status="in-progress">
+                        <td>E-003</td>
+                        <td>Main Power Distribution</td>
+                        <td><span class="badge bg-warning">Electrical</span> Power Distribution</td>
+                        <td>Level 1 - Zone B</td>
+                        <td><span class="badge bg-warning">In Progress</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">30%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-003">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- Plumbing Element -->
+                      <tr data-system="Plumbing" data-status="in-progress">
+                        <td>E-004</td>
+                        <td>Main Water Supply</td>
+                        <td><span class="badge bg-success">Plumbing</span> Water Supply</td>
+                        <td>Level 1 - Zone D</td>
+                        <td><span class="badge bg-warning">In Progress</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">60%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-004">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- Fire Protection Element -->
+                      <tr data-system="Fire Protection" data-status="not-started">
+                        <td>E-005</td>
+                        <td>Sprinkler System</td>
+                        <td><span class="badge bg-danger">Fire Protection</span> Sprinkler</td>
+                        <td>Level 2 - Zone C</td>
+                        <td><span class="badge bg-secondary">Not Started</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">0%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-005">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- Architectural Element -->
+                      <tr data-system="Architectural" data-status="in-progress">
+                        <td>E-006</td>
+                        <td>Interior Partitions</td>
+                        <td><span class="badge bg-secondary">Architectural</span> Partition</td>
+                        <td>Level 3 - Zone A</td>
+                        <td><span class="badge bg-warning">In Progress</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">25%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-006">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- Equipment Element -->
+                      <tr data-system="Equipment" data-status="complete">
+                        <td>E-007</td>
+                        <td>Elevator #1</td>
+                        <td><span class="badge bg-dark">Equipment</span> Elevator</td>
+                        <td>All Levels - Core</td>
+                        <td><span class="badge bg-success">Complete</span></td>
+                        <td>
+                          <div class="progress" style="height: 5px;">
+                            <div class="progress-bar bg-dark" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="small text-muted text-center">100%</div>
+                        </td>
+                        <td>
+                          <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="E-007">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      
+                      <!-- More rows would be here in a real application -->
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                  <div>
+                    Showing <span class="filtered-count">7</span> of <span class="total-count">50</span> elements
+                  </div>
+                  <div>
+                    <nav aria-label="Table navigation">
+                      <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- System-specific tabs would be similar to the "all" tab but filtered -->
+              <div class="tab-pane fade" id="structural" role="tabpanel" aria-labelledby="structural-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+              <div class="tab-pane fade" id="mechanical" role="tabpanel" aria-labelledby="mechanical-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+              <div class="tab-pane fade" id="electrical" role="tabpanel" aria-labelledby="electrical-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+              <div class="tab-pane fade" id="plumbing" role="tabpanel" aria-labelledby="plumbing-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+              <div class="tab-pane fade" id="fire-protection" role="tabpanel" aria-labelledby="fire-protection-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+              <div class="tab-pane fade" id="architectural" role="tabpanel" aria-labelledby="architectural-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+              <div class="tab-pane fade" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
+                <!-- Will be populated by JavaScript with filtered content -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Edit Element Modal -->
+  <div class="modal fade" id="editElementModal" tabindex="-1" aria-labelledby="editElementModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editElementModalLabel">Edit Element</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editElementForm">
+            <div class="mb-3">
+              <label for="element-id" class="form-label">Element ID</label>
+              <input type="text" class="form-control" id="element-id" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="element-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="element-name">
+            </div>
+            <div class="mb-3">
+              <label for="element-type" class="form-label">Type</label>
+              <select class="form-select" id="element-type">
+                <optgroup label="Structural">
+                  <option value="structural-column">Column</option>
+                  <option value="structural-beam">Beam</option>
+                  <option value="structural-slab">Slab</option>
+                  <option value="structural-wall">Load-bearing Wall</option>
+                </optgroup>
+                <optgroup label="Mechanical">
+                  <option value="mechanical-duct">HVAC Duct</option>
+                  <option value="mechanical-equipment">HVAC Equipment</option>
+                  <option value="mechanical-diffuser">Air Diffuser</option>
+                </optgroup>
+                <optgroup label="Electrical">
+                  <option value="electrical-distribution">Power Distribution</option>
+                  <option value="electrical-lighting">Lighting</option>
+                  <option value="electrical-conduit">Conduit</option>
+                </optgroup>
+                <optgroup label="Plumbing">
+                  <option value="plumbing-supply">Water Supply</option>
+                  <option value="plumbing-drainage">Drainage</option>
+                  <option value="plumbing-fixture">Fixture</option>
+                </optgroup>
+                <optgroup label="Fire Protection">
+                  <option value="fire-sprinkler">Sprinkler</option>
+                  <option value="fire-alarm">Fire Alarm</option>
+                  <option value="fire-piping">Fire Protection Piping</option>
+                </optgroup>
+                <optgroup label="Architectural">
+                  <option value="architectural-partition">Partition</option>
+                  <option value="architectural-ceiling">Ceiling</option>
+                  <option value="architectural-finish">Finish</option>
+                </optgroup>
+                <optgroup label="Equipment">
+                  <option value="equipment-elevator">Elevator</option>
+                  <option value="equipment-generator">Generator</option>
+                  <option value="equipment-medical">Medical Equipment</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="element-location" class="form-label">Location</label>
+              <input type="text" class="form-control" id="element-location">
+            </div>
+            <div class="mb-3">
+              <label for="element-status" class="form-label">Status</label>
+              <select class="form-select" id="element-status">
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="on-hold">On Hold</option>
+                <option value="complete">Complete</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="element-progress" class="form-label">Progress</label>
+              <div class="d-flex align-items-center">
+                <input type="range" class="form-range flex-grow-1 me-2" id="element-progress" min="0" max="100" step="5">
+                <span id="progress-value">0</span>%
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="element-notes" class="form-label">Notes</label>
+              <textarea class="form-control" id="element-notes" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="saveElementBtn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add Element Modal -->
+  <div class="modal fade" id="addElementModal" tabindex="-1" aria-labelledby="addElementModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addElementModalLabel">Add New Element</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form content similar to edit form but without pre-populated data -->
+          <form id="addElementForm">
+            <div class="mb-3">
+              <label for="new-element-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="new-element-name" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-element-type" class="form-label">Type</label>
+              <select class="form-select" id="new-element-type" required>
+                <optgroup label="Structural">
+                  <option value="structural-column">Column</option>
+                  <option value="structural-beam">Beam</option>
+                  <option value="structural-slab">Slab</option>
+                  <option value="structural-wall">Load-bearing Wall</option>
+                </optgroup>
+                <optgroup label="Mechanical">
+                  <option value="mechanical-duct">HVAC Duct</option>
+                  <option value="mechanical-equipment">HVAC Equipment</option>
+                  <option value="mechanical-diffuser">Air Diffuser</option>
+                </optgroup>
+                <optgroup label="Electrical">
+                  <option value="electrical-distribution">Power Distribution</option>
+                  <option value="electrical-lighting">Lighting</option>
+                  <option value="electrical-conduit">Conduit</option>
+                </optgroup>
+                <optgroup label="Plumbing">
+                  <option value="plumbing-supply">Water Supply</option>
+                  <option value="plumbing-drainage">Drainage</option>
+                  <option value="plumbing-fixture">Fixture</option>
+                </optgroup>
+                <optgroup label="Fire Protection">
+                  <option value="fire-sprinkler">Sprinkler</option>
+                  <option value="fire-alarm">Fire Alarm</option>
+                  <option value="fire-piping">Fire Protection Piping</option>
+                </optgroup>
+                <optgroup label="Architectural">
+                  <option value="architectural-partition">Partition</option>
+                  <option value="architectural-ceiling">Ceiling</option>
+                  <option value="architectural-finish">Finish</option>
+                </optgroup>
+                <optgroup label="Equipment">
+                  <option value="equipment-elevator">Elevator</option>
+                  <option value="equipment-generator">Generator</option>
+                  <option value="equipment-medical">Medical Equipment</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="new-element-location" class="form-label">Location</label>
+              <input type="text" class="form-control" id="new-element-location" required>
+            </div>
+            <div class="mb-3">
+              <label for="new-element-status" class="form-label">Status</label>
+              <select class="form-select" id="new-element-status" required>
+                <option value="not-started" selected>Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="on-hold">On Hold</option>
+                <option value="complete">Complete</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="new-element-progress" class="form-label">Progress</label>
+              <div class="d-flex align-items-center">
+                <input type="range" class="form-range flex-grow-1 me-2" id="new-element-progress" min="0" max="100" step="5" value="0">
+                <span id="new-progress-value">0</span>%
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="new-element-notes" class="form-label">Notes</label>
+              <textarea class="form-control" id="new-element-notes" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="addElementSubmitBtn">Add Element</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Toast Container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/modals.js"></script>
+  <script src="assets/js/filters.js"></script>
+  
+  <!-- Page-specific scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize the sidebar toggle functionality
+      const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', function() {
+          document.querySelector('.wrapper').classList.toggle('sidebar-collapsed');
+          
+          // Toggle the direction of the chevron icon
+          const icon = this.querySelector('i');
+          if (icon.classList.contains('fa-chevron-left')) {
+            icon.classList.replace('fa-chevron-left', 'fa-chevron-right');
+          } else {
+            icon.classList.replace('fa-chevron-right', 'fa-chevron-left');
+          }
+        });
+      }
+      
+      // Theme switcher functionality
+      const themeSwitcherBtn = document.getElementById('theme-switcher');
+      if (themeSwitcherBtn) {
+        themeSwitcherBtn.addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+          
+          document.documentElement.setAttribute('data-theme', newTheme);
+          
+          // Toggle the moon/sun icon
+          const icon = this.querySelector('i');
+          if (icon.classList.contains('fa-moon')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+          } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+          }
+        });
+      }
+    
+      // Set up tab functionality to filter by system type
+      const systemTabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
+      systemTabs.forEach(tab => {
+        tab.addEventListener('shown.bs.tab', function(event) {
+          const targetId = event.target.getAttribute('id');
+          const system = targetId.replace('-tab', '');
+          
+          if (system === 'all') {
+            // Show all elements
+            document.querySelectorAll('.elements-table tbody tr').forEach(row => {
+              row.style.display = '';
+            });
+          } else {
+            // Filter elements by system
+            document.querySelectorAll('.elements-table tbody tr').forEach(row => {
+              const rowSystem = row.getAttribute('data-system').toLowerCase().replace(' ', '-');
+              row.style.display = (rowSystem === system) ? '' : 'none';
+            });
+          }
+          
+          // Update filtered count
+          const filteredCount = document.querySelector('.filtered-count');
+          const visibleRows = document.querySelectorAll('.elements-table tbody tr:not([style*="display: none"])').length;
+          if (filteredCount) {
+            filteredCount.textContent = visibleRows;
+          }
+        });
+      });
+      
+      // Initialize progress sliders
+      const progressSlider = document.getElementById('element-progress');
+      const progressValue = document.getElementById('progress-value');
+      if (progressSlider && progressValue) {
+        progressSlider.addEventListener('input', function() {
+          progressValue.textContent = this.value;
+        });
+      }
+      
+      const newProgressSlider = document.getElementById('new-element-progress');
+      const newProgressValue = document.getElementById('new-progress-value');
+      if (newProgressSlider && newProgressValue) {
+        newProgressSlider.addEventListener('input', function() {
+          newProgressValue.textContent = this.value;
+        });
+      }
+      
+      // Initialize add element button
+      const addElementBtn = document.getElementById('addElementBtn');
+      if (addElementBtn) {
+        addElementBtn.addEventListener('click', function() {
+          const addElementModal = new bootstrap.Modal(document.getElementById('addElementModal'));
+          addElementModal.show();
+        });
+      }
+      
+      // Initialize edit element buttons
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.edit-element-btn')) {
+          const button = e.target.closest('.edit-element-btn');
+          const elementId = button.getAttribute('data-element-id');
+          
+          // In a real application, you would load element data from the server
+          // For this example, we'll just set some dummy data
+          document.getElementById('element-id').value = elementId;
+          
+          // Find the corresponding row in the table
+          const row = button.closest('tr');
+          if (row) {
+            document.getElementById('element-name').value = row.cells[1].textContent;
+            
+            // Extract element type from the badge text
+            const badgeText = row.cells[2].querySelector('.badge').textContent;
+            const elementType = row.cells[2].textContent.replace(badgeText, '').trim().toLowerCase();
+            
+            // Set type based on badge and element text
+            const typeSelect = document.getElementById('element-type');
+            const systemLower = badgeText.toLowerCase();
+            const typeLower = elementType.toLowerCase();
+            
+            // Try to find a matching option
+            let optionFound = false;
+            for (const option of typeSelect.options) {
+              if (option.value.toLowerCase().includes(systemLower) && option.value.toLowerCase().includes(typeLower)) {
+                typeSelect.value = option.value;
+                optionFound = true;
+                break;
+              }
+            }
+            
+            // If no exact match, try to find a similar option
+            if (!optionFound) {
+              for (const option of typeSelect.options) {
+                if (option.value.toLowerCase().includes(systemLower)) {
+                  typeSelect.value = option.value;
+                  break;
+                }
+              }
+            }
+            
+            document.getElementById('element-location').value = row.cells[3].textContent;
+            
+            // Set status based on the badge text in the status cell
+            const statusText = row.cells[4].querySelector('.badge').textContent.toLowerCase();
+            document.getElementById('element-status').value = statusText.replace(' ', '-');
+            
+            // Extract progress percentage from the small text
+            const progressText = row.cells[5].querySelector('.small').textContent;
+            const progressPercentage = parseInt(progressText) || 0;
+            document.getElementById('element-progress').value = progressPercentage;
+            document.getElementById('progress-value').textContent = progressPercentage;
+            
+            // Show modal
+            const editElementModal = new bootstrap.Modal(document.getElementById('editElementModal'));
+            editElementModal.show();
+          }
+        }
+      });
+      
+      // Handle save element button
+      const saveElementBtn = document.getElementById('saveElementBtn');
+      if (saveElementBtn) {
+        saveElementBtn.addEventListener('click', function() {
+          // In a real application, you would save the changes to the server
+          // For this example, we'll just show a success message
+          
+          // Get form data
+          const elementId = document.getElementById('element-id').value;
+          const elementName = document.getElementById('element-name').value;
+          const elementType = document.getElementById('element-type').value;
+          const elementLocation = document.getElementById('element-location').value;
+          const elementStatus = document.getElementById('element-status').value;
+          const elementProgress = document.getElementById('element-progress').value;
+          
+          // Find the row in the table
+          const row = document.querySelector(`.edit-element-btn[data-element-id="${elementId}"]`).closest('tr');
+          if (row) {
+            // Update row data
+            row.cells[1].textContent = elementName;
+            
+            // Update system badge and type text
+            const typeCell = row.cells[2];
+            const badge = typeCell.querySelector('.badge');
+            const typeText = elementType.split('-')[1]; // Get the type text from the value
+            const system = elementType.split('-')[0]; // Get the system from the value
+            
+            // Set the badge class and text
+            let badgeClass = 'bg-secondary';
+            switch (system) {
+              case 'structural':
+                badgeClass = 'bg-primary';
+                break;
+              case 'mechanical':
+                badgeClass = 'bg-info';
+                break;
+              case 'electrical':
+                badgeClass = 'bg-warning';
+                break;
+              case 'plumbing':
+                badgeClass = 'bg-success';
+                break;
+              case 'fire':
+                badgeClass = 'bg-danger';
+                break;
+              case 'architectural':
+                badgeClass = 'bg-secondary';
+                break;
+              case 'equipment':
+                badgeClass = 'bg-dark';
+                break;
+            }
+            
+            badge.className = `badge ${badgeClass}`;
+            badge.textContent = system.charAt(0).toUpperCase() + system.slice(1);
+            typeCell.innerHTML = `<span class="badge ${badgeClass}">${badge.textContent}</span> ${typeText.charAt(0).toUpperCase() + typeText.slice(1)}`;
+            
+            // Update location
+            row.cells[3].textContent = elementLocation;
+            
+            // Update status
+            const statusCell = row.cells[4];
+            const statusBadge = statusCell.querySelector('.badge');
+            let statusBadgeClass = 'bg-secondary';
+            
+            switch (elementStatus) {
+              case 'not-started':
+                statusBadgeClass = 'bg-secondary';
+                statusBadge.textContent = 'Not Started';
+                break;
+              case 'in-progress':
+                statusBadgeClass = 'bg-warning';
+                statusBadge.textContent = 'In Progress';
+                break;
+              case 'on-hold':
+                statusBadgeClass = 'bg-danger';
+                statusBadge.textContent = 'On Hold';
+                break;
+              case 'complete':
+                statusBadgeClass = 'bg-success';
+                statusBadge.textContent = 'Complete';
+                break;
+            }
+            
+            statusBadge.className = `badge ${statusBadgeClass}`;
+            
+            // Update progress
+            const progressCell = row.cells[5];
+            const progressBar = progressCell.querySelector('.progress-bar');
+            const progressText = progressCell.querySelector('.small');
+            
+            progressBar.style.width = `${elementProgress}%`;
+            progressBar.setAttribute('aria-valuenow', elementProgress);
+            progressText.textContent = `${elementProgress}%`;
+            
+            // Update data attributes
+            row.setAttribute('data-system', badge.textContent);
+            row.setAttribute('data-status', elementStatus);
+            
+            // Show success message
+            const toastContainer = document.querySelector('.toast-container');
+            if (toastContainer) {
+              const toast = document.createElement('div');
+              toast.className = 'toast show';
+              toast.setAttribute('role', 'alert');
+              toast.setAttribute('aria-live', 'assertive');
+              toast.setAttribute('aria-atomic', 'true');
+              
+              toast.innerHTML = `
+                <div class="toast-header bg-success text-white">
+                  <strong class="me-auto">Success</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  Element ${elementId} updated successfully!
+                </div>
+              `;
+              
+              toastContainer.appendChild(toast);
+              
+              // Auto-dismiss after 3 seconds
+              setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                  toastContainer.removeChild(toast);
+                }, 500);
+              }, 3000);
+            }
+            
+            // Close modal
+            const editElementModal = bootstrap.Modal.getInstance(document.getElementById('editElementModal'));
+            editElementModal.hide();
+          }
+        });
+      }
+      
+      // Handle add element submit button
+      const addElementSubmitBtn = document.getElementById('addElementSubmitBtn');
+      if (addElementSubmitBtn) {
+        addElementSubmitBtn.addEventListener('click', function() {
+          // In a real application, you would save the new element to the server
+          // For this example, we'll just add a new row to the table
+          
+          // Get form data
+          const elementName = document.getElementById('new-element-name').value;
+          const elementType = document.getElementById('new-element-type').value;
+          const elementLocation = document.getElementById('new-element-location').value;
+          const elementStatus = document.getElementById('new-element-status').value;
+          const elementProgress = document.getElementById('new-element-progress').value;
+          
+          // Generate a new element ID
+          const elementId = `E-${Math.floor(Math.random() * 1000).toString().padStart(3, '0')}`;
+          
+          // Parse system and type from the element type value
+          const system = elementType.split('-')[0]; // Get the system from the value
+          const typeText = elementType.split('-')[1]; // Get the type text from the value
+          
+          // Set badge class based on system
+          let badgeClass = 'bg-secondary';
+          switch (system) {
+            case 'structural':
+              badgeClass = 'bg-primary';
+              break;
+            case 'mechanical':
+              badgeClass = 'bg-info';
+              break;
+            case 'electrical':
+              badgeClass = 'bg-warning';
+              break;
+            case 'plumbing':
+              badgeClass = 'bg-success';
+              break;
+            case 'fire':
+              badgeClass = 'bg-danger';
+              break;
+            case 'architectural':
+              badgeClass = 'bg-secondary';
+              break;
+            case 'equipment':
+              badgeClass = 'bg-dark';
+              break;
+          }
+          
+          // Set status badge class based on status
+          let statusBadgeClass = 'bg-secondary';
+          let statusText = 'Not Started';
+          
+          switch (elementStatus) {
+            case 'not-started':
+              statusBadgeClass = 'bg-secondary';
+              statusText = 'Not Started';
+              break;
+            case 'in-progress':
+              statusBadgeClass = 'bg-warning';
+              statusText = 'In Progress';
+              break;
+            case 'on-hold':
+              statusBadgeClass = 'bg-danger';
+              statusText = 'On Hold';
+              break;
+            case 'complete':
+              statusBadgeClass = 'bg-success';
+              statusText = 'Complete';
+              break;
+          }
+          
+          // Create a new row
+          const newRow = document.createElement('tr');
+          newRow.setAttribute('data-system', system.charAt(0).toUpperCase() + system.slice(1));
+          newRow.setAttribute('data-status', elementStatus);
+          
+          newRow.innerHTML = `
+            <td>${elementId}</td>
+            <td>${elementName}</td>
+            <td><span class="badge ${badgeClass}">${system.charAt(0).toUpperCase() + system.slice(1)}</span> ${typeText.charAt(0).toUpperCase() + typeText.slice(1)}</td>
+            <td>${elementLocation}</td>
+            <td><span class="badge ${statusBadgeClass}">${statusText}</span></td>
+            <td>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar ${badgeClass}" role="progressbar" style="width: ${elementProgress}%;" aria-valuenow="${elementProgress}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="small text-muted text-center">${elementProgress}%</div>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary edit-element-btn" data-element-id="${elementId}">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+          `;
+          
+          // Add the new row to the table
+          document.querySelector('.elements-table tbody').appendChild(newRow);
+          
+          // Update filtered count
+          const filteredCount = document.querySelector('.filtered-count');
+          const totalCount = document.querySelector('.total-count');
+          
+          if (filteredCount && totalCount) {
+            const visibleRows = document.querySelectorAll('.elements-table tbody tr:not([style*="display: none"])').length;
+            filteredCount.textContent = visibleRows;
+            totalCount.textContent = parseInt(totalCount.textContent) + 1;
+          }
+          
+          // Show success message
+          const toastContainer = document.querySelector('.toast-container');
+          if (toastContainer) {
+            const toast = document.createElement('div');
+            toast.className = 'toast show';
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
+            toast.setAttribute('aria-atomic', 'true');
+            
+            toast.innerHTML = `
+              <div class="toast-header bg-success text-white">
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Element ${elementId} added successfully!
+              </div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            // Auto-dismiss after 3 seconds
+            setTimeout(() => {
+              toast.classList.remove('show');
+              setTimeout(() => {
+                toastContainer.removeChild(toast);
+              }, 500);
+            }, 3000);
+          }
+          
+          // Close modal
+          const addElementModal = bootstrap.Modal.getInstance(document.getElementById('addElementModal'));
+          addElementModal.hide();
+          
+          // Reset form
+          document.getElementById('addElementForm').reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

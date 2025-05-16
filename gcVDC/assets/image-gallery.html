@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery - gcVDC</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/image-styles.css">
+  <link rel="stylesheet" href="assets/css/icon-sprites.css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
+  
+  <style>
+    .gallery-section {
+      margin-bottom: 3rem;
+    }
+    
+    .gallery-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .image-card {
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1rem;
+      height: 100%;
+      background-color: var(--bg-card);
+    }
+    
+    .image-card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    
+    .image-preview {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background-color: var(--bg-light);
+      border-radius: 4px;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .image-code {
+      font-family: monospace;
+      background-color: var(--bg-light);
+      padding: 0.5rem;
+      font-size: 0.875rem;
+      border-radius: 4px;
+      overflow: auto;
+      max-height: 100px;
+    }
+    
+    .image-reference {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body data-page="image-gallery">
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div id="header-container"></div>
+      
+      <!-- Image Gallery Content -->
+      <div class="container-fluid py-3">
+        <div class="row mb-4">
+          <div class="col-12">
+            <h1>Image Gallery</h1>
+            <p class="text-muted">A showcase of all available images and icons for the gcVDC application.</p>
+          </div>
+        </div>
+        
+        <!-- Core Branding Images -->
+        <div class="gallery-section">
+          <h2 class="mb-3">Core Branding Images</h2>
+          <div class="row">
+            <!-- Logo -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Logo</h3>
+                <div class="image-preview">
+                  <img src="assets/img/logo.svg" alt="gcVDC Logo" style="height: 60px;">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/logo.svg" alt="gcVDC Logo"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/logo.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Favicon -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Favicon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/favicon.svg" alt="gcVDC Favicon" style="height: 60px;">
+                </div>
+                <div class="image-code">
+                  &lt;link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/favicon.svg
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- System Icons -->
+        <div class="gallery-section">
+          <h2 class="mb-3">System Icons</h2>
+          <div class="row">
+            <!-- Structural Icon -->
+            <div class="col-md-4 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Structural Icon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/structural-icon.svg" alt="Structural Icon" class="system-icon-lg system-icon-structural">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/structural-icon.svg" alt="Structural Icon" class="system-icon-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/structural-icon.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Mechanical Icon -->
+            <div class="col-md-4 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Mechanical Icon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/mechanical-icon.svg" alt="Mechanical Icon" class="system-icon-lg system-icon-mechanical">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/mechanical-icon.svg" alt="Mechanical Icon" class="system-icon-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/mechanical-icon.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Electrical Icon -->
+            <div class="col-md-4 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Electrical Icon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/electrical-icon.svg" alt="Electrical Icon" class="system-icon-lg system-icon-electrical">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/electrical-icon.svg" alt="Electrical Icon" class="system-icon-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/electrical-icon.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Plumbing Icon -->
+            <div class="col-md-4 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Plumbing Icon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/plumbing-icon.svg" alt="Plumbing Icon" class="system-icon-lg system-icon-plumbing">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/plumbing-icon.svg" alt="Plumbing Icon" class="system-icon-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/plumbing-icon.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Fire Protection Icon -->
+            <div class="col-md-4 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Fire Protection Icon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/fire-protection-icon.svg" alt="Fire Protection Icon" class="system-icon-lg system-icon-fire-protection">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/fire-protection-icon.svg" alt="Fire Protection Icon" class="system-icon-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/fire-protection-icon.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Architectural Icon -->
+            <div class="col-md-4 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Architectural Icon</h3>
+                <div class="image-preview">
+                  <img src="assets/img/architectural-icon.svg" alt="Architectural Icon" class="system-icon-lg system-icon-architectural">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/architectural-icon.svg" alt="Architectural Icon" class="system-icon-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/architectural-icon.svg
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Status Indicators -->
+        <div class="gallery-section">
+          <h2 class="mb-3">Status Indicators</h2>
+          <div class="row">
+            <!-- Not Started -->
+            <div class="col-md-3 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Not Started</h3>
+                <div class="image-preview">
+                  <span class="badge bg-secondary">
+                    <span class="status-indicator status-not-started me-1"></span>
+                    Not Started
+                  </span>
+                </div>
+                <div class="image-code">
+                  &lt;span class="status-indicator status-not-started"&gt;&lt;/span&gt;
+                </div>
+              </div>
+            </div>
+            
+            <!-- In Progress -->
+            <div class="col-md-3 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">In Progress</h3>
+                <div class="image-preview">
+                  <span class="badge bg-warning">
+                    <span class="status-indicator status-in-progress me-1"></span>
+                    In Progress
+                  </span>
+                </div>
+                <div class="image-code">
+                  &lt;span class="status-indicator status-in-progress"&gt;&lt;/span&gt;
+                </div>
+              </div>
+            </div>
+            
+            <!-- Complete -->
+            <div class="col-md-3 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Complete</h3>
+                <div class="image-preview">
+                  <span class="badge bg-success">
+                    <span class="status-indicator status-complete me-1"></span>
+                    Complete
+                  </span>
+                </div>
+                <div class="image-code">
+                  &lt;span class="status-indicator status-complete"&gt;&lt;/span&gt;
+                </div>
+              </div>
+            </div>
+            
+            <!-- On Hold -->
+            <div class="col-md-3 col-sm-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">On Hold</h3>
+                <div class="image-preview">
+                  <span class="badge bg-danger">
+                    <span class="status-indicator status-on-hold me-1"></span>
+                    On Hold
+                  </span>
+                </div>
+                <div class="image-code">
+                  &lt;span class="status-indicator status-on-hold"&gt;&lt;/span&gt;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Placeholder Images -->
+        <div class="gallery-section">
+          <h2 class="mb-3">Placeholder Images</h2>
+          <div class="row">
+            <!-- Empty State -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Empty State</h3>
+                <div class="image-preview">
+                  <img src="assets/img/empty-state.svg" alt="Empty State" style="max-height: 120px;">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/empty-state.svg" alt="Empty State" class="empty-state-img"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/empty-state.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Plan Placeholder -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Plan Placeholder</h3>
+                <div class="image-preview">
+                  <img src="assets/img/plan-placeholder.svg" alt="Plan Placeholder" style="max-height: 120px;">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/plan-placeholder.svg" alt="Plan Placeholder" class="plan-placeholder-img"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/plan-placeholder.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- No Data Chart -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">No Data Chart</h3>
+                <div class="image-preview">
+                  <img src="assets/img/no-data-chart.svg" alt="No Data Chart" style="max-height: 120px;">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/no-data-chart.svg" alt="No Data Chart" class="no-data-chart-img"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/no-data-chart.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Model Placeholder -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Model Placeholder</h3>
+                <div class="image-preview">
+                  <img src="assets/img/model-placeholder.svg" alt="Model Placeholder" style="max-height: 120px;">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/model-placeholder.svg" alt="Model Placeholder" class="model-placeholder-img"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/model-placeholder.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- User Avatar -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">User Avatar</h3>
+                <div class="image-preview">
+                  <img src="assets/img/user-avatar.svg" alt="User Avatar" class="user-avatar-lg">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/user-avatar.svg" alt="User Avatar" class="user-avatar-lg"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/user-avatar.svg
+                </div>
+              </div>
+            </div>
+            
+            <!-- Generic Placeholder -->
+            <div class="col-md-4 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Generic Placeholder</h3>
+                <div class="image-preview">
+                  <img src="assets/img/placeholder.svg" alt="Placeholder" style="max-height: 120px;">
+                </div>
+                <div class="image-code">
+                  &lt;img src="assets/img/placeholder.svg" alt="Placeholder" class="placeholder-img"&gt;
+                </div>
+                <div class="image-reference">
+                  File: assets/img/placeholder.svg
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- JavaScript Usage Examples -->
+        <div class="gallery-section">
+          <h2 class="mb-3">JavaScript Usage Examples</h2>
+          <div class="row">
+            <div class="col-md-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Get System Icon</h3>
+                <div class="image-preview" id="system-icon-example"></div>
+                <div class="image-code">
+                  const structuralIcon = gcVDC.getSystemIcon('Structural', true);<br>
+                  document.getElementById('system-icon-example').innerHTML = structuralIcon;
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Get Placeholder Image</h3>
+                <div class="image-preview" id="placeholder-example"></div>
+                <div class="image-code">
+                  const placeholder = gcVDC.getPlaceholderImage('empty-state', 'No data available');<br>
+                  document.getElementById('placeholder-example').innerHTML = placeholder;
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 gallery-item">
+              <div class="image-card">
+                <h3 class="image-card-title">Get User Avatar</h3>
+                <div class="image-preview" id="avatar-example"></div>
+                <div class="image-code">
+                  const avatar = gcVDC.getUserAvatar(null, true);<br>
+                  document.getElementById('avatar-example').innerHTML = avatar;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Preload images for faster access -->
+  <div class="preload-images">
+    <img src="assets/img/logo.svg" alt="Preload Logo">
+    <img src="assets/img/favicon.svg" alt="Preload Favicon">
+    <img src="assets/img/structural-icon.svg" alt="Preload Structural Icon">
+    <img src="assets/img/mechanical-icon.svg" alt="Preload Mechanical Icon">
+    <img src="assets/img/electrical-icon.svg" alt="Preload Electrical Icon">
+    <img src="assets/img/plumbing-icon.svg" alt="Preload Plumbing Icon">
+    <img src="assets/img/fire-protection-icon.svg" alt="Preload Fire Protection Icon">
+    <img src="assets/img/architectural-icon.svg" alt="Preload Architectural Icon">
+    <img src="assets/img/empty-state.svg" alt="Preload Empty State">
+    <img src="assets/img/plan-placeholder.svg" alt="Preload Plan Placeholder">
+    <img src="assets/img/no-data-chart.svg" alt="Preload No Data Chart">
+    <img src="assets/img/model-placeholder.svg" alt="Preload Model Placeholder">
+    <img src="assets/img/user-avatar.svg" alt="Preload User Avatar">
+    <img src="assets/img/placeholder.svg" alt="Preload Placeholder">
+  </div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/image-utils.js"></script>
+  
+  <script>
+    // Load components
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load sidebar
+      fetch('components/sidebar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('sidebar-container').innerHTML = html;
+        });
+      
+      // Load header
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+        });
+      
+      // JavaScript examples
+      if (window.gcVDC) {
+        // System icon example
+        const structuralIcon = window.gcVDC.getSystemIcon('Structural', true);
+        document.getElementById('system-icon-example').innerHTML = structuralIcon;
+        
+        // Placeholder image example
+        const placeholder = window.gcVDC.getPlaceholderImage('empty-state', 'No data available');
+        document.getElementById('placeholder-example').innerHTML = placeholder;
+        
+        // User avatar example
+        const avatar = window.gcVDC.getUserAvatar(null, true);
+        document.getElementById('avatar-example').innerHTML = avatar;
+      }
+    });
+  </script>
+</body>
+</html>

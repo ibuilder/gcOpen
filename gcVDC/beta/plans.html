@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans - gcVDC</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="plans">
+  <div class="wrapper">
+    <!-- Sidebar - loaded via direct HTML injection -->
+    <div id="sidebar-container">
+      <!-- Will be populated by component-loader.js -->
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header - loaded via direct HTML injection -->
+      <div id="header-container">
+        <!-- Will be populated by component-loader.js -->
+      </div>
+      
+      <!-- Plans Content -->
+      <div class="plans-content">
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Plans</h5>
+                <div>
+                  <button type="button" class="btn btn-primary" id="uploadPlanBtn">
+                    <i class="fas fa-upload"></i> Upload Plan
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- Filter Buttons -->
+                <div class="mb-3">
+                  <div class="btn-group" role="group" aria-label="Plan filter buttons">
+                    <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="structural">Structural</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="mechanical">Mechanical</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="electrical">Electrical</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="plumbing">Plumbing</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="fire-protection">Fire Protection</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter="architectural">Architectural</button>
+                  </div>
+                </div>
+                
+                <!-- Plans Grid -->
+                <div class="row g-4">
+                  <!-- Structural Plan -->
+                  <div class="col-md-4 col-sm-6 plan-item" data-plan-type="structural">
+                    <div class="card h-100">
+                      <div class="card-img-top plan-thumbnail" style="background-color: #f5f5f5; height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-columns fa-4x text-primary"></i>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Structural Plan - Level 1</h5>
+                        <p class="card-text">Version: 2.3</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <span class="badge bg-primary">Structural</span>
+                          <small class="text-muted">Last updated: May 05, 2025</small>
+                        </div>
+                      </div>
+                      <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <button class="btn btn-sm btn-outline-secondary plan-details-btn">
+                          <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary plan-view-btn">
+                          <i class="fas fa-eye"></i> View
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Mechanical Plan -->
+                  <div class="col-md-4 col-sm-6 plan-item" data-plan-type="mechanical">
+                    <div class="card h-100">
+                      <div class="card-img-top plan-thumbnail" style="background-color: #f5f5f5; height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-fan fa-4x text-info"></i>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">HVAC Plan - Level 1</h5>
+                        <p class="card-text">Version: 1.7</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <span class="badge bg-info">Mechanical</span>
+                          <small class="text-muted">Last updated: May 03, 2025</small>
+                        </div>
+                      </div>
+                      <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <button class="btn btn-sm btn-outline-secondary plan-details-btn">
+                          <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary plan-view-btn">
+                          <i class="fas fa-eye"></i> View
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Electrical Plan -->
+                  <div class="col-md-4 col-sm-6 plan-item" data-plan-type="electrical">
+                    <div class="card h-100">
+                      <div class="card-img-top plan-thumbnail" style="background-color: #f5f5f5; height: 180px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-bolt fa-4x text-warning"></i>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Electrical Plan - Level 1</h5>
+                        <p class="card-text">Version: 2.1</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <span class="badge bg-warning">Electrical</span>
+                          <small class="text-muted">Last updated: May 01, 2025</small>
+                        </div>
+                      </div>
+                      <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <button class="btn btn-sm btn-outline-secondary plan-details-btn">
+                          <i class="fas fa-info-circle"></i> Details
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary plan-view-btn">
+                          <i class="fas fa-eye"></i> View
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Add more plan cards here if needed -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Upload Plan Modal -->
+  <div class="modal fade" id="uploadPlanModal" tabindex="-1" aria-labelledby="uploadPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="uploadPlanModalLabel">Upload New Plan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="uploadPlanForm">
+            <div class="mb-3">
+              <label for="plan-title" class="form-label">Plan Title</label>
+              <input type="text" class="form-control" id="plan-title" required>
+            </div>
+            <div class="mb-3">
+              <label for="plan-system" class="form-label">System Type</label>
+              <select class="form-select" id="plan-system" required>
+                <option value="">Select System</option>
+                <option value="Structural">Structural</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Fire Protection">Fire Protection</option>
+                <option value="Architectural">Architectural</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="plan-level" class="form-label">Level</label>
+              <select class="form-select" id="plan-level" required>
+                <option value="">Select Level</option>
+                <option value="Level 1">Level 1</option>
+                <option value="Level 2">Level 2</option>
+                <option value="Level 3">Level 3</option>
+                <option value="All Levels">All Levels</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="plan-version" class="form-label">Version</label>
+              <input type="text" class="form-control" id="plan-version" placeholder="e.g. 1.0" required>
+            </div>
+            <div class="mb-3">
+              <label for="plan-file" class="form-label">Plan File</label>
+              <input type="file" class="form-control" id="plan-file" accept=".pdf,.dwg,.dxf" required>
+              <div class="form-text">Supported formats: PDF, DWG, DXF (Max file size: 25MB)</div>
+            </div>
+            <div class="mb-3">
+              <label for="plan-description" class="form-label">Description (Optional)</label>
+              <textarea class="form-control" id="plan-description" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" form="uploadPlanForm" class="btn btn-primary">Upload Plan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Plan Details Modal -->
+  <div class="modal fade" id="planDetailsModal" tabindex="-1" aria-labelledby="planDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="planDetailsModalLabel">Plan Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-8">
+              <h4 id="detail-plan-title">Structural Plan - Level 1</h4>
+              <p class="text-muted">System: <span id="detail-plan-system">Structural</span></p>
+              <p class="text-muted">Level: <span id="detail-plan-level">Level 1</span></p>
+              <p class="text-muted">Version: <span id="detail-plan-version">2.3</span></p>
+              <p class="text-muted">Last Updated: <span id="detail-plan-date">May 05, 2025</span></p>
+              <p class="text-muted">Uploaded By: <span id="detail-plan-uploader">John Doe</span></p>
+              <h5 class="mt-4">Description</h5>
+              <p id="detail-plan-description">This structural plan includes all columns, beams, and load-bearing walls for Level 1. Updates in this version include additional support columns near the east entrance.</p>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Version History</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      v2.3
+                      <small>May 05, 2025</small>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      v2.2
+                      <small>Apr 20, 2025</small>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      v2.1
+                      <small>Apr 10, 2025</small>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      v2.0
+                      <small>Mar 28, 2025</small>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      v1.0
+                      <small>Feb 15, 2025</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="viewPlanBtn">View Plan</button>
+          <button type="button" class="btn btn-outline-primary" id="downloadPlanBtn">Download</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Toast Container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Component Loader (Direct HTML injection to avoid CORS) -->
+  <script src="assets/js/component-loader-fixed.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/modals.js"></script>
+  
+  <!-- Page-specific scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize upload plan button
+      const uploadPlanBtn = document.getElementById('uploadPlanBtn');
+      if (uploadPlanBtn) {
+        uploadPlanBtn.addEventListener('click', function() {
+          const uploadPlanModal = new bootstrap.Modal(document.getElementById('uploadPlanModal'));
+          uploadPlanModal.show();
+        });
+      }
+      
+      // Initialize plan filter buttons
+      const filterButtons = document.querySelectorAll('.btn-group .btn-outline-primary');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Get filter value
+          const filter = this.getAttribute('data-filter');
+          
+          // Filter plan items
+          const planItems = document.querySelectorAll('.plan-item');
+          planItems.forEach(item => {
+            const planType = item.getAttribute('data-plan-type');
+            
+            if (filter === 'all' || filter === planType) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Initialize plan details buttons
+      const planDetailsButtons = document.querySelectorAll('.plan-details-btn');
+      planDetailsButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const planCard = this.closest('.card');
+          const planTitle = planCard.querySelector('.card-title').textContent;
+          const planSystem = planCard.querySelector('.badge').textContent;
+          const planVersion = planCard.querySelector('.card-text').textContent.replace('Version: ', '');
+          const planDate = planCard.querySelector('.text-muted').textContent.replace('Last updated: ', '');
+          
+          // Set modal values
+          document.getElementById('detail-plan-title').textContent = planTitle;
+          document.getElementById('detail-plan-system').textContent = planSystem;
+          document.getElementById('detail-plan-level').textContent = planTitle.split(' - ')[1];
+          document.getElementById('detail-plan-version').textContent = planVersion;
+          document.getElementById('detail-plan-date').textContent = planDate;
+          
+          // Show modal
+          const planDetailsModal = new bootstrap.Modal(document.getElementById('planDetailsModal'));
+          planDetailsModal.show();
+        });
+      });
+      
+      // Initialize view plan buttons
+      const viewPlanButtons = document.querySelectorAll('.plan-view-btn');
+      viewPlanButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const planCard = this.closest('.card');
+          const planTitle = planCard.querySelector('.card-title').textContent;
+          
+          // In a real application, this would open the plan viewer
+          if (window.gcVDC && window.gcVDC.showToast) {
+            window.gcVDC.showToast(`Viewing plan: ${planTitle}`, 'info');
+          } else {
+            alert(`Viewing plan: ${planTitle}`);
+          }
+        });
+      });
+      
+      // Handle plan upload form submission
+      const uploadPlanForm = document.getElementById('uploadPlanForm');
+      if (uploadPlanForm) {
+        uploadPlanForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data (in a real app, this would be sent to the server)
+          const formData = new FormData(this);
+          
+          // Close modal
+          const uploadPlanModal = bootstrap.Modal.getInstance(document.getElementById('uploadPlanModal'));
+          uploadPlanModal.hide();
+          
+          // Show success message
+          if (window.gcVDC && window.gcVDC.showToast) {
+            window.gcVDC.showToast('Plan uploaded successfully!', 'success');
+          } else {
+            alert('Plan uploaded successfully!');
+          }
+          
+          // Reset form
+          this.reset();
+        });
+      }
+      
+      // Initialize download plan button
+      const downloadPlanBtn = document.getElementById('downloadPlanBtn');
+      if (downloadPlanBtn) {
+        downloadPlanBtn.addEventListener('click', function() {
+          const planTitle = document.getElementById('detail-plan-title').textContent;
+          
+          // In a real application, this would trigger a file download
+          if (window.gcVDC && window.gcVDC.showToast) {
+            window.gcVDC.showToast(`Downloading plan: ${planTitle}`, 'info');
+          } else {
+            alert(`Downloading plan: ${planTitle}`);
+          }
+        });
+      }
+      
+      // Initialize view plan button in modal
+      const viewPlanBtn = document.getElementById('viewPlanBtn');
+      if (viewPlanBtn) {
+        viewPlanBtn.addEventListener('click', function() {
+          const planTitle = document.getElementById('detail-plan-title').textContent;
+          
+          // In a real application, this would open the plan viewer
+          if (window.gcVDC && window.gcVDC.showToast) {
+            window.gcVDC.showToast(`Viewing plan: ${planTitle}`, 'info');
+          } else {
+            alert(`Viewing plan: ${planTitle}`);
+          }
+          
+          // Close modal
+          const planDetailsModal = bootstrap.Modal.getInstance(document.getElementById('planDetailsModal'));
+          planDetailsModal.hide();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* gcVDC - Image Styles */
+
+/* System Icons */
+.system-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.system-icon-lg {
+  width: 48px;
+  height: 48px;
+}
+
+.system-icon-structural {
+  filter: drop-shadow(0 1px 2px rgba(13, 110, 253, 0.2));
+}
+
+.system-icon-mechanical {
+  filter: drop-shadow(0 1px 2px rgba(13, 202, 240, 0.2));
+}
+
+.system-icon-electrical {
+  filter: drop-shadow(0 1px 2px rgba(255, 193, 7, 0.2));
+}
+
+.system-icon-plumbing {
+  filter: drop-shadow(0 1px 2px rgba(32, 201, 151, 0.2));
+}
+
+.system-icon-fire-protection {
+  filter: drop-shadow(0 1px 2px rgba(220, 53, 69, 0.2));
+}
+
+.system-icon-architectural {
+  filter: drop-shadow(0 1px 2px rgba(111, 66, 193, 0.2));
+}
+
+/* Placeholder Images */
+.placeholder-img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.placeholder-img:hover {
+  opacity: 0.9;
+}
+
+.empty-state-img {
+  width: 300px;
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+}
+
+.plan-placeholder-img {
+  width: 200px;
+  height: 200px;
+  background-color: var(--bg-card);
+  border-radius: 4px;
+}
+
+.model-placeholder-img {
+  width: 100%;
+  min-height: 300px;
+  background-color: var(--bg-light);
+  border-radius: 4px;
+}
+
+.no-data-chart-img {
+  width: 100%;
+  height: 250px;
+  background-color: var(--bg-light);
+  border-radius: 4px;
+}
+
+/* User Avatar */
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-avatar-lg {
+  width: 80px;
+  height: 80px;
+}
+
+/* Logo */
+.header-logo {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar-logo {
+  height: 24px;
+  margin-right: 10px;
+}
+
+.footer-logo {
+  height: 40px;
+  opacity: 0.8;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .placeholder-img {
+  filter: brightness(0.8);
+}
+
+[data-theme="dark"] .system-icon {
+  filter: brightness(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .empty-state-img {
+    width: 200px;
+  }
+  
+  .user-avatar-lg {
+    width: 60px;
+    height: 60px;
+  }
+}
